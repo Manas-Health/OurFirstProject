@@ -1,0 +1,36 @@
+{
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.5.1",
+    "axios": "^1.6.2",
+    "bcrypt": "^5.1.1",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.2",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "moment": "^2.30.1",
+    "mongoose": "^8.0.3",
+    "nodemailer": "^6.9.7",
+    "react-icons": "^4.12.0",
+    "react-router-dom": "^6.20.1",
+    "react-scripts": "^5.0.1",
+    "react-toastify": "^9.1.3"
+  },
+  "name": "manashealth",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./Backend/server",
+    "server": "nodemon ./Backend/server",
+    "manas": "npm start --prefix manas",
+    "flask": "cd ./Flask && python -m flask --app ./app.py run",
+    "dev": "concurrently \"npm run server\" \"npm run manas\" \"npm run flask\""
+  },
+  "keywords": [],
+  "author": "sai",
+  "license": "ISC",
+  "description": "Project",
+  "devDependencies": {
+    "@types/react-router-dom": "^5.3.3"
+  }
+}

@@ -1,0 +1,997 @@
+
+/*Animations*/
+@keyframes ani {
+  from {
+    transform: translateY(-70%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.transforms {
+  animation-name: ani;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in;
+}
+
+.hide {
+  visibility: hidden;
+}
+
+@keyframes ani2 {
+  from {
+    transform: translateX(230px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes ani3 {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes a1 {
+  from {
+    transform: translateZ(-100%);
+    opacity: 0.3;
+  }
+
+  to {
+    transform: translateZ(0);
+    opacity: 1
+  }
+}
+
+@keyframes h3-quote {
+  from {
+    transform: translateY(500px);
+
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#q1 {
+  animation-name: h3-quote1;
+  animation-duration: 0.9s;
+  animation-timing-function: ease-in;
+}
+
+#q2 {
+  animation-name: h3-quote2;
+  animation-duration: 0.9s;
+  animation-timing-function: ease-in;
+}
+
+/*login css*/
+
+.outer {
+  border-style: solid;
+  border-color: black;
+  border-width: 0.5px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  height: 410px;
+  width: 420px;
+  left: 57%;
+  position: fixed;
+  bottom: 19%;
+  transition: box-shadow;
+  opacity: 0.8;
+  padding-left: 17px;
+  animation-name: outers;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+
+}
+
+.outer:hover {
+
+  background: linear-gradient(135deg, #b9e9dc, #c7bff0);
+  box-shadow: 0px 0px 10px rgb(18, 18, 20);
+  /* background: linear-gradient(132deg, azure 0.00%,rgb(220, 183, 189) 100.00%);  */
+}
+
+
+.outer h1 {
+  text-align: center;
+  color: black;
+  font-size: 39px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.outer1 {
+  border-style: solid;
+  border-color: black;
+  border-width: 1.7px;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  height: 410px;
+  width: 420px;
+  border-width: 0.5px;
+  position: fixed;
+  left: 57%;
+  bottom: 19%;
+  transition: box-shadow;
+  opacity: 0.8;
+  padding-left: 17px;
+  animation-name: outers;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+}
+
+.outer1:hover {
+  border-width: 1.5px;
+  box-shadow: 0px 0px 10px rgb(18, 18, 20);
+  /* background: linear-gradient(132deg, azure 0.00%,rgb(220, 183, 189) 100.00%); } */
+  background: linear-gradient(135deg, #b9e9dc, #c7bff0);
+}
+
+
+.outer1 h1 {
+  text-align: center;
+  color: black;
+  font-size: 39px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/*Animations for outer and outer1*/
+@keyframes outers {
+  from {
+    transform: translateY(-70%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.fdiv {
+  display: flex;
+  justify-content: center;
+
+}
+
+.divf {
+  flex-direction: column;
+  position: relative;
+  top: 50px;
+  height: 32vh;
+  width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+}
+
+.inner {
+  margin: 10px;
+  font-size: 17px;
+  font-size: 18px;
+  color: black;
+  position: relative;
+  left: 2.2%;
+}
+
+.inner .in1 {
+  position: relative;
+  width: 320px;
+  height: 33.9px;
+  padding-left: 7px;
+  border-width: 0.7px;
+  border-style: solid;
+  border-color: black;
+  outline: none;
+  background: transparent;
+  color: black;
+  border-top-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+
+
+.inner .in2 {
+  width: 320px;
+
+  height: 33.9px;
+  border-radius: 2px;
+  border-width: 0.5px;
+  background-color: rgb(232, 92, 113);
+  cursor: pointer;
+  border-style: solid;
+  position: relative;
+  right: 8.2px;
+  opacity: 0.7;
+}
+
+.int{
+  width: 320px;
+
+  height: 33.9px;
+  border-radius: 2px;
+  border-width: 0.5px;
+  background-color: rgb(232, 92, 113);
+  cursor: pointer;
+  border-style: solid;
+  position: relative;
+  right: 8.2px;
+  top: 27px;
+  opacity: 0.7;
+}
+#f1{
+  margin-bottom: 15px;
+}
+
+#s1{
+  margin-bottom: 15px;
+}
+.in2:hover {
+  opacity: 1;
+}
+
+a {
+  text-decoration-line: none;
+  color: black;
+}
+
+.inner label input {
+  cursor: pointer;
+}
+
+.do {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.do p {
+  word-spacing: 5px;
+  margin-right: 40px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+
+.none {
+  display: none;
+}
+
+/*Main css*/
+* {
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Sign up css*/
+
+.full {
+  background-color: aliceblue;
+  color: black;
+  text-align: center;
+  background: transparent;
+  backdrop-filter: blur(25px);
+  border-style: solid;
+  border-width: 0.5px;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  border-color: black;
+  width: 27vw;
+  padding-top: 60px;
+  padding-left: 35px;
+  padding-right: 10px;
+  position: absolute;
+  left: 57%;
+  bottom: 13.9%;
+  z-index: 100;
+  display: flex;
+  flex-wrap: wrap;
+  height: 70vh;
+  transition: box-shadow;
+  justify-content: center;
+  animation-name: ani2;
+  animation-timing-function: ease-in;
+  animation-duration: 1.5s;
+}
+
+.full:hover {
+  border-width: 1.5px;
+  box-shadow: 0px 0px 10px rgb(18, 18, 20);
+  background: linear-gradient(135deg, #b9e9dc, #c7bff0);
+}
+
+.bb {
+  margin-bottom: 10px;
+  text-align: left;
+  font-size: 17px;
+  color: black;
+  height: 10vh;
+}
+
+.bb label {
+  display: inline-block;
+  width: 150px;
+  margin: 3px;
+}
+
+.bb input {
+  width: 95%;
+  padding: 6px;
+  padding-left: 26px;
+  outline: none;
+  background: transparent;
+  border-style: solid;
+  border-width: 0.5px;
+  border-top-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.aa {
+  border-style: solid;
+  border-color: black;
+  position: relative;
+  left: 9px;
+  color: black;
+  background-color: rgb(235, 227, 227);
+  max-width: 322px;
+  transition: box-shadow;
+  outline: none;
+  border-width: 0.5px;
+  text-align: center;
+}
+
+#submit {
+  border-radius: 20px;
+  margin-right: 3px;
+  padding: 3px 10px;
+  width: 90px;
+  margin-bottom: 5px;
+  background-color: rgb(41, 39, 39);
+  cursor: pointer;
+  position: absolute;
+  bottom: 3px;
+  left: 98px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  color: whitesmoke;
+}
+
+#reset {
+  border-radius: 20px;
+  margin-left: 3px;
+  padding: 3px 10px;
+  width: 90px;
+  margin-bottom: 5px;
+  background-color: rgb(41, 39, 39);
+  ;
+  cursor: pointer;
+  position: absolute;
+  bottom: 3px;
+  right: 98px;
+  border-color: black;
+  border-style: solid;
+  border-width: 2px;
+  color: whitesmoke;
+}
+
+.full .close1 {
+  position: absolute;
+  bottom: 91%;
+  cursor: pointer;
+  right: 25px;
+  top: 15px;
+  height: fit-content;
+}
+
+.full .h2 {
+  display: inline;
+  position: absolute;
+  top: 7px;
+  left: 27%;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+/*Classes added through JS*/
+/* .dis {
+  display: none;
+}
+
+.bo {
+  border-color: red;
+  border-width: 2px;
+  border-style: solid;
+  margin-bottom: 14px;
+}
+
+.i {
+  position: relative;
+  bottom: 22%;
+  left: 3%;
+  color: red;
+  font-size: 14px;
+} */
+
+/*icons*/
+#eye {
+  display: inline;
+  position: absolute;
+  left: 330px;
+  top: 175.5px;
+  cursor: pointer;
+}
+
+#eye2 {
+  position: absolute;
+  display: inline;
+  z-index: 2;
+  left: 330px;
+  top: 175.5px;
+  cursor: pointer;
+}
+
+#eye3 {
+  display: inline;
+  position: absolute;
+  left: 330px;
+  top: 175.5px;
+  cursor: pointer;
+}
+
+#eye4 {
+  position: absolute;
+  display: inline;
+  z-index: 2;
+  left: 330px;
+  top: 175.5px;
+  cursor: pointer;
+}
+
+.toggle {
+  visibility: hidden;
+}
+
+.icon {
+  z-index: 5;
+  position: relative;
+  right: 83.3%;
+  top: 3.3px;
+}
+
+.icon2 {
+  position: relative;
+  right: 7%;
+  top: 3%;
+  z-index: 5;
+}
+
+/*hover effects*/
+
+/* Add hover effects to login input fields */
+.in1:hover {
+  box-shadow: 5px 5px 5px rgb(69, 69, 69);
+}
+
+/* Change the text color of the Login button on hover */
+
+
+/* Add hover effects to sign-up input fields */
+.aa:hover {
+  border-color: black;
+  /* Change the border color of the input field on hover */
+  /* Change the background color of the input field on hover */
+  box-shadow: 5px 5px 5px rgb(69, 69, 69);
+}
+
+#submit:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+#reset:hover {
+  background-color: whitesmoke;
+  color: black;
+}
+/* Add hover effect to the Close button */
+
+.ci {
+  height: 70vh;
+  width: 50vw;
+  position: fixed;
+  bottom: 15%;
+  left: 10%;
+  border-radius: 20%;
+}
+
+/*----------------------------------------*/
+
+
+@keyframes h1 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h1 {
+  animation-name: h1;
+  animation-duration: 0.59s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+
+@keyframes h2 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h2 {
+  animation-name: h2;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+@keyframes h3 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h3 {
+  animation-name: h3;
+  animation-duration: 0.9s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+@keyframes h4 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h4 {
+  animation-name: h4;
+  animation-duration: 1.1s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+@keyframes h5 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h5 {
+  animation-name: h5;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+@keyframes h6 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h6 {
+  animation-name: h6;
+  animation-duration: 0.59s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+@keyframes h7 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h7 {
+  animation-name: h7;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+@keyframes h8 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h8 {
+  animation-name: h8;
+  animation-duration: 0.9s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+@keyframes h9 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h9 {
+  animation-name: h9;
+  animation-duration: 1.1s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+@keyframes h10 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h10 {
+  animation-name: h10;
+  animation-duration: 1.3s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+@keyframes h11 {
+  from {
+    transform: translateY(-170px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+
+}
+
+#h11 {
+  animation-name: h11;
+  animation-duration: 1.4s;
+  animation-timing-function: ease-in;
+  z-index: 5;
+}
+
+/*------------------------------------*/
+
+
+.error {
+  color: red;
+  font-size: 14px;
+  position: relative;
+  left: 10px;
+}
+
+::placeholder {
+  color: black;
+}
+
+
+.lcls {
+  width: 20px;
+  position: relative;
+  bottom: 30px;
+  right: 15px;
+}
+
+.pbody {
+  background-image: url(C:\Users\karli\OneDrive\Desktop\ManasHealth-M\manas\src\images\33.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
+}
+
+.st {
+  background-image: url(C:\Users\karli\OneDrive\Desktop\ManasHealth-M\manas\src\images\33.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100vh;
+}
+
+.stubody {
+  background-image: url(C:\Users\karli\OneDrive\Desktop\ManasHealth-M\manas\src\images\33.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+
+  height: 100vh;
+}
+
+/*otp*/
+
+.closeotp{
+  position: absolute;
+  right: 2.7%;
+  bottom: 93%;
+}
+.mail {
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  width: 390px;
+  height: 400px;
+  position: absolute;
+  right: 16.7%;
+  top: 23%;
+display: flex;
+flex-direction: column;
+align-items: center;
+background: linear-gradient(135deg, #b9e9dc, #c7bff0);
+
+}
+
+.mail span{
+  margin-top: 15px;
+}
+
+.mail-ver {
+  margin-top: 30px;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+}
+
+.otpandresend{
+  display: flex;
+
+}
+
+.otp {
+  margin-top: 25px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.inp {
+  border: 0;
+  outline: 0;
+  background-color: aliceblue;
+  color: #555;
+  padding: 13px 13px;
+  border-radius: 30px;
+text-align: center;
+}
+
+.sub{
+  padding-left: 17px;
+  padding-right: 17px;
+  padding-bottom: 3px;
+  padding-top: 3px;
+  border-radius: 20px;
+  outline: none;
+  border-width: 0.1px;
+  cursor: pointer;
+}.sub1{
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  position: relative;
+  top: 27px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: rgb(196, 225, 255);
+  cursor: pointer;
+}
+.otpvis{
+  visibility: hidden;
+}
+
+
+
+/*project.jsx*/
+.abcd{
+  position: relative;
+  left: 53%;
+  top: 25%;
+  display: flex;
+ flex-direction: column;
+ width: 32vw;
+ align-items: center;
+ justify-content: space-between;
+ height: 55vh;
+
+}
+
+.mhead{
+  font-size:2.7vw;
+}
+.h3{
+  animation-name: h3-quote;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  font-style: italic;
+  font-size:20px ;
+  position: relative;
+  bottom: 9%;
+}
+
+.signup{
+  position: relative;
+  bottom: 15%;
+}
+
+
+.ps {
+  display: inline-block;
+  width: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+
+#a1 {
+  animation-name: a1;
+  animation-duration: 1.25s;
+  animation-timing-function: ease-in;
+ 
+}
+
+#a2 {
+  animation-name: a1;
+  animation-duration: 1.25s;
+  animation-timing-function: ease-in;
+
+}
+
+.pp {
+  margin-top: 10px;
+  color: white;
+ border: none;
+ border-radius: 5px;
+  cursor: pointer;
+  margin-right: 3px;
+  background: linear-gradient(grey, black);
+  margin-bottom: 30px;
+  font-weight: 200px;
+  font-size: large;
+  opacity: 0.8;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.pp:hover {
+  opacity: 0.7;
+}
+
+.pp:active {
+  opacity: 0.4;
+}
+
+.icn {
+  position: relative;
+  left: 0.2px;
+}
+
+.sh1 {
+  display: inline-block;
+ 
+}
+
+
+/*New here singn up*/
+
+.signup{
+  border-style: solid;
+  width: 270px;
+  height: 100px;
+border-radius: 10px;
+ border-width: 1px;
+
+}
+
+.pnew{
+  text-align: center;
+  position: relative;
+  top: 1%;
+  font-weight: bold;
+}
+
+#btnnew{
+  color:purple;
+  position: relative;
+  top: 19%;
+  left: 29%;
+font-size: 29px;
+border:none;
+outline: none;
+background: transparent;
+}
+
+#btnnew:hover{
+  text-decoration: underline;
+}
+.signup:hover {
+  border-width: 1.5px;
+  box-shadow: 0px 0px 10px rgb(18, 18, 20);
+  background: linear-gradient(135deg, #b9e9dc, #c7bff0);
+
+  /* background: linear-gradient(132deg, azure 0.00%,rgb(220, 183, 189) 100.00%);  */
+}

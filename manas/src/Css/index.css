@@ -1,0 +1,243 @@
+.li{
+  font-size: 27px;
+  color:black;
+  font-family: 'Montserrat', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+
+}
+.nav h3{
+  font-family: 'Montserrat', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Roboto', sans-serif;
+}
+
+  .profileh{
+ 
+    font-size: 30px;
+   font-family: 'Montserrat', sans-serif;
+   font-family: 'Raleway', sans-serif;
+   font-family: 'Roboto', sans-serif;
+  }
+
+  .p{
+    margin: 20px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  
+  /* .yourmentalh1{
+    position: fixed;
+    left: 33%;
+    top: 40%;
+    font-family: 'Montserrat', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Rouge Script', cursive;
+font-size: 90px;
+text-shadow:2px 2px whitesmoke;
+  }
+  .yourmentalh1:hover{
+    margin: 2px;
+    text-shadow:2px 2px rgb(95, 19, 201);
+  }
+  .yourmentalh2{
+    position: fixed;
+    left: 44%;
+    top: 57%;
+    font-family: 'Montserrat', sans-serif;
+font-family: 'Raleway', sans-serif;
+font-family: 'Rouge Script', cursive;
+font-size: 90px;
+text-shadow:2px 2px whitesmoke;
+
+  }
+  .yourmentalh2:hover{
+    margin: 2px;
+    text-shadow:2px 2px rgb(95, 19, 201);
+  } */
+
+
+/*Home*/
+
+.hover-div p{
+  font-family: "Lumanosimo", cursive;
+  font-size: 12px;
+}
+.hover-div h3{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  
+}
+.testp{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+font-size: 25px;
+}
+.testdiv1 p{
+  font-family: "Lumanosimo", cursive;
+  font-size: 12px;
+}
+.movingtext{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+.blink1{
+  font-family: "Rouge Script", cursive;
+  font-size: 50px;
+  font-weight: bold;
+}
+.wel-come h1{
+  font-family: "Crimson Pro", serif;
+  font-size: 59.9px;
+
+}
+.wel-come p{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+}
+.hed dl{
+  margin: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+.uli{
+  margin:7px;
+  margin-left: 30px;
+  font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+.innerh{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 27px;
+}
+
+.indivhome1{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+}
+
+
+
+ /*Questions*/
+ 
+.qt p{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 21px;
+}
+
+
+.pred{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 22px;
+  
+}
+
+.Resshow{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 23px;
+}
+
+/*Awareness*/
+
+.adiv1 p{
+
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+.whatismentalhealth p{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+/*Report*/
+
+.report{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*T-home*/
+.studentdetailsdiv{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.headerp{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*forgot*/
+.fp{
+  font-size: 17px;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.fp2{
+  font-size: 17px;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+.fp1{
+  font-size: 17px;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+dt{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/*contact us page*/
+.contact-info p{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+/*Food and Exercises and Activities*/
+.hob h1,.hinac{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
+
+dd{
+  font-style: italic;
+ }

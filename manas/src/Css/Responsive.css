@@ -1,0 +1,325 @@
+/*project.jsx*/
+
+@media (max-width:360px) {
+    .h3 {
+        font-size: 9px;
+    }
+
+    .pp {
+        font-size: 10px;
+        height: 10%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signup {
+        width: 190px;
+        height: 55px;
+    }
+
+    #btnnew {
+        font-size: 14px;
+    }
+
+    .pnew {
+        font-weight: bold;
+        font-size: 9px;
+    }
+}
+
+@media (min-width:361px) and (max-width:700px) {
+    .h3 {
+        font-size: 11.9px;
+    }
+
+    .pp {
+        font-size: 13px;
+        height: 15%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signup {
+        width: 225px;
+        height: 60px;
+    }
+
+    #btnnew {
+        font-size: 18px;
+    }
+
+    .pnew {
+        font-weight: bold;
+        font-size: 9px;
+    }
+}
+
+@media (min-width:701px) and (max-width:1000px) {
+    .h3 {
+        font-size: 14px;
+    }
+
+    .pp {
+        font-size: 15px;
+        height: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signup {
+        width: 245px;
+        height: 77px;
+    }
+
+    #btnnew {
+        font-size: 22px;
+    }
+
+    .pnew {
+        font-weight: bold;
+        font-size: 12px;
+    }
+}
+
+@media (min-width:1001px) and (max-width:1287px) {
+    .h3 {
+        font-size: 18px;
+    }
+
+    .pp {
+        font-size: 21px;
+        height: 47%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .signup {
+        width: 260px;
+        height: 90px;
+    }
+
+    #btnnew {
+        font-size: 25px;
+    }
+
+    .pnew {
+        font-weight: bold;
+        font-size: 14px;
+    }
+}
+
+/*Aboputus*/
+@media(max-width:1000px){
+    .imgscontainer{
+        display: none;
+    }
+    
+}
+
+@media(max-width:1285px){
+   
+}
+
+@media(min-width:1000px)and (max-width:1284px){
+    .text h2{
+        font-size:70px;
+    }
+      
+      .text p {
+        font-size: 16.5px;
+        line-height: 25px;
+        letter-spacing: 1px;
+      }
+      
+      .content {
+        
+        font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+      }
+      
+}
+
+@media(min-width:600px)and (max-width:999px){
+    
+    .abo{
+        overflow-y: scroll;
+    }
+    .text h2{
+        font-size:60px;
+    }
+      
+      .text p {
+        font-size: 15.5px;
+        line-height: 25px;
+        letter-spacing: 1px;
+      }
+      
+      .content {
+        
+        font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+      }
+      
+}
+
+@media(max-width:599px){
+    .abo{
+        overflow-y: scroll;
+    }
+    
+    .text h2{
+        font-size:50px;
+    }
+      
+      .text p {
+        font-size: 13.5px;
+        line-height: 25px;
+        letter-spacing: 1px;
+      }
+      
+      .content {
+        
+        font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+      }
+      
+}
+
+
+/*Student login*/
+
+@media (min-width:990px) and (max-width:1200px){
+    .outer{
+        height: 395px;
+        width: 400px;
+    }
+   .inner .in1{
+    margin-right: 24px;
+   }
+    .inner .in2{
+        margin-right: 3px;
+    }
+
+    .icon2 {
+        position: absolute;
+        top: 50px;
+        right: 29px;
+        z-index: 5;
+      }
+    .lcls{
+        position: absolute;
+        z-index: 5;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (min-width:600px) and (max-width:990px){
+    .outer{
+        height: 385px;
+        width: 390px;
+        position: fixed;
+        left: 30%;
+    }
+   .inner .in1{
+    margin-right: 24px;
+   }
+    .inner .in2{
+        margin-right: 3px;
+    }
+
+    .icon2 {
+        position: absolute;
+        top: 50px;
+        right: 29px;
+        z-index: 5;
+      }
+    .lcls{
+        position: absolute;
+        z-index: 5;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+@media (max-width:600px){
+    .outer{
+        height: 365px;
+        width: 365px;
+        position: fixed;
+        left: 17%;
+    }
+   .inner .in1{
+    width: 290px;
+    height: 29px;
+    margin-right: 24px;
+   }
+    .inner .in2{
+        width: 290px;
+        height: 29px;
+        margin-right: 3px;
+        margin-bottom: 30px;
+    }
+
+    .icon2 {
+        position: absolute;
+        top: 50px;
+        right: 29px;
+        z-index: 5;
+      }
+    .lcls{
+        position: absolute;
+        z-index: 5;
+        top: 15px;
+        right: 15px;
+    }
+}
+
+
+/*Home*/
+/* Adjustments for responsiveness */
+@media (max-width: 768px) {
+    .universalh {
+      padding: 20px; /* Add padding for smaller screens */
+    }
+  
+    .hhh {
+      height: auto;
+      background-image: none;
+    }
+  
+    .outerdivinhome1 {
+      width: 100%;
+      left: 0;
+      padding-top: 20px;
+    }
+  
+    .hhh1 {
+      height: auto;
+      flex-direction: column; /* Adjust flex direction for smaller screens */
+    }
+  
+    .tst,
+    .tst1 {
+      width: 90%; /* Adjust width for smaller screens */
+    }
+  
+    .footerh {
+      padding: 20px;
+    }
+  
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .tokendiv h1 {
+      font-size: 30px;
+    }
+  
+    .social-media ul {
+      margin-top: 15px;
+    }
+  }
+  
