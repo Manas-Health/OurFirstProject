@@ -1,10 +1,15 @@
-import React, { useContext} from 'react'
+import React, { useContext, useState} from 'react'
 import {  Link ,Navigate} from 'react-router-dom';
 import ContextApi from './ContextApi';
 const Report = () => {
   const {tokens, result} = useContext(ContextApi);
+  const [back,setback]=useState(false)
   
     var latestResult = result[result.length - 1];
+
+    if (back) {
+      return <Navigate to="/questions" />;
+    }
 
     if (!tokens.token) {
       return <Navigate to="/" />;
@@ -14,7 +19,7 @@ const Report = () => {
   {
     result.length>0 ? (
       <div className='reportuniversal'>
-      <Link to="/questions">      <button className="closereport">Back</button></Link>
+      <button onClick={()=>{setback(true),localStorage.removeItem('result')}} className="closereport">Back</button>
       <h1 style={{textAlign:'center',position:'relative',top:'2%',fontSize:'50px',fontFamily:'cursive'}}>Report</h1>
       <div className="report">
         <div className='Show0'>
