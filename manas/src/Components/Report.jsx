@@ -1,16 +1,19 @@
 import React, { useContext} from 'react'
-import {  Link } from 'react-router-dom';
+import {  Link ,Navigate} from 'react-router-dom';
 import ContextApi from './ContextApi';
 const Report = () => {
   const {tokens, result} = useContext(ContextApi);
   
     var latestResult = result[result.length - 1];
+
     if (!tokens.token) {
       return <Navigate to="/" />;
     }
   return (
-  
-    <div className='reportuniversal'>
+    <>
+  {
+    result.length>0 ? (
+      <div className='reportuniversal'>
       <Link to="/questions">      <button className="closereport">Back</button></Link>
       <h1 style={{textAlign:'center',position:'relative',top:'2%',fontSize:'50px',fontFamily:'cursive'}}>Report</h1>
       <div className="report">
@@ -105,6 +108,13 @@ const Report = () => {
         </div>}
       </div>
     </div>
+    ):<div className='oops'>
+      <p>404</p>
+      <p>Error!</p>
+      <p>Oops Page Not Found!</p>
+    </div>
+  }
+  </>
   )
 }
 
