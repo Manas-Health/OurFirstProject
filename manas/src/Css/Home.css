@@ -182,12 +182,12 @@
   box-shadow: 2px 2px 2px 2px rgb(122, 120, 120);
 }
 .footerh{
-  height: 30vh;
+  height: 17.99vh;
   background-color: black;
 }
 
 .contact-info{
-  padding-top: 7px;
+  padding-top: 2px;
   color: whitesmoke;
   display: flex;
   justify-content: space-around;
@@ -195,46 +195,34 @@
   
 }
 
-.social-media ul{
+.contact-info a{
   color: whitesmoke;
-  
-  margin-top: 27px;
+}
+.social-media{
+  margin-top: 2px;
+  color: whitesmoke;
   display: flex;
   justify-content: center;
-  align-items: center;
-  list-style-type: none;
 }
-
-.social-media ul li{
- margin-left: 3.9px;
- margin-right:3.9px;
+.social-media a{
   color: whitesmoke;
- 
-}
-
-.social-media ul li a{
- 
-  color: whitesmoke;
- 
+  margin-right: 3px;
 }
 
 .social-media h3{
-  text-align: center;
  position: relative;
- top: 20px;
- color: whitesmoke;
-
+ right: 10px;
 }
-
 .legal-info{
+  margin-top: 3px;
   color: whitesmoke;
 display: flex;
-  height: 120px;
+  height: 75px;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   padding: 5px;
-  gap: 7px;
+  gap: 5px;
 }
 
 .copymanas{

@@ -155,14 +155,13 @@ const Home = () => {
         <div className="footer-content">
           <div className="contact-info">
             <h3>Contact Us Through Email or Mobile:</h3>
-            <p>Email: <b> mhproject19@gmail.com</b></p>
+            <p>Email: <b> <a href="">mhproject19@gmail.com</a></b></p>
             <p>Phone: <b>8500867358</b> or <b>6281032946</b> or  <b>8074622058</b></p>
           </div>
           <div className="social-media">
             <h3>Follow Us On our Social media Accounts</h3>
-            <ul>
-              <li><a href="https://www.instagram.com/manashealth_23" target="_blank">< FaInstagram />-Instagram</a></li>
-            </ul>
+            <div><a href="https://www.instagram.com/manashealth_23" target="_blank">< FaInstagram />-Instagram</a>
+</div>
           </div>
         </div>
         <div className="legal-info">
