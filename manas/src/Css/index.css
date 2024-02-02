@@ -69,6 +69,13 @@ text-shadow:2px 2px whitesmoke;
 
 
 /*Home*/
+
+.date{
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+}
 .manas p{
   font-family: "Crimson Pro", serif;
   font-size: 70.9px;
@@ -81,16 +88,26 @@ text-shadow:2px 2px whitesmoke;
   
   
 }
-.hhmdiv div span{
-  font-size: 30px;
-  /* font-family: 'Montserrat', sans-serif;
-  font-family: 'Raleway', sans-serif;
-  font-family: 'Roboto', sans-serif; */
+.hhm .hdiv2 .hhmp1{
+ font-size: 23.9px;
+  font-family: "Lumanosimo", cursive;
+}
+
+.hhm .hdiv2 #srs{
+  font-size: 33px;
+  font-family: "Lumanosimo", cursive;
+}
+.hhm .hdiv2 #dps{
+  font-size: 33px;
+  font-family: "Lumanosimo", cursive;
+}
+.hhm .hdiv2 #anx{
+  font-size: 33px;
   font-family: "Lumanosimo", cursive;
 }
 
 .span1inlatest{
-  font-size: 27px;
+  font-size: 37px;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Raleway', sans-serif;
   font-family: 'Roboto', sans-serif;

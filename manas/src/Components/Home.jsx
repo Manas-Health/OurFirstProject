@@ -10,25 +10,65 @@ import { FaInstagram } from "react-icons/fa6";
 
 const Home = () => {
 
-  const { tokens, dta, setdata, studentreports } = useContext(ContextApi);
+  const { tokens, dta, setdata, studentreports,setstudentreports } = useContext(ContextApi);
+  const [date, setdate] = useState('None')
+  const [scond, setscond] = useState('None')
+  const [dcond, setdcond] = useState('None')
+  const [acond, setacond] = useState('None')
+  useEffect(() => {
+    const find = async () => {
+      try {
+        if(dta){
+          console.log(dta.email)
+        await axios.post('http://localhost:3000/findstudentreports', { studentemail: dta.email })
+          .then((res) => {
+            setstudentreports(res.data)
+            console.log(res.data)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+        }
 
-  const [scond, setscond] = useState('')
-  const [dcond, setdcond] = useState('')
-  const [acond, setacond] = useState('')
-
+      } catch (error) {
+        console.error('Error sending student details:', error);
+      }
+    }
+    find()
+  },[dta,tokens.token])
 
   useEffect(() => {
     try {
       for (var i = studentreports.length - 1; i > studentreports.length - 4; i--) {
         if (studentreports[i].condition === 'Stress') {
-          setscond(studentreports[i].report)
+          if (studentreports[i].report === 'Extremely Severe') {
+            setscond("Ext-Severe")
+          }
+          else {
+            setscond(studentreports[i].report)
+          }
+
         }
         if (studentreports[i].condition === 'Depression') {
-          setdcond(studentreports[i].report)
+          if (studentreports[i].report === 'Extremely Severe') {
+            setdcond("Ext-Severe")
+          }
+          else {
+            setdcond(studentreports[i].report)
+
+          }
         }
         if (studentreports[i].condition === 'Anxiety') {
-          setacond(studentreports[i].report)
+          if (studentreports[i].report === 'Extremely Severe') {
+            setacond("Ext-Severe")
+          }
+          else {
+            setacond(studentreports[i].report)
+          }
         }
+      }
+      for (var i = studentreports.length - 1; i > studentreports.length - 2; i--) {
+        setdate(studentreports[i].date)
       }
     }
     catch (err) {
@@ -52,10 +92,10 @@ const Home = () => {
     <div className='universalh'>
       <div className="hhh">
         <div className="outerdivinhome0">
-           <div className="manas">
+          <div className="manas">
             <p>Manas Health</p>
-            <span>A way to praceful and healthy mind</span>
-           </div>
+            <span>A way to peaceful and healthy mind</span>
+          </div>
           {dta && <div className='wel-come'>
             <h1>Hello {dta.username}</h1><img src='https://cdn-icons-png.freepik.com/256/5821/5821932.png?ga=GA1.1.71213412.1697439743' height={70} width={70} style={{ marginLeft: '5px' }} />
             {localStorage.setItem('user', JSON.stringify(dta.username))}
@@ -118,85 +158,25 @@ const Home = () => {
         </div>
 
       </div>
-      <div className="hhh-m">
-        <div className="hhmdiv">
-          <img className='imginlatest' src="https://tse1.mm.bing.net/th?id=OIP.lKJDxqTxOrxKEplRQlP5LgHaHa&pid=Api&P=0&h=180" alt="mind" />
-          <div>
-            <span className='span1inlatest'>-----Latest results-----</span>
-            <span><p>Stress</p><p className={scond === 'Extremely Severe' ? 'color-extreme' : (scond === 'Severe' ? 'color-severe' : (scond === 'Moderate' ? 'color-moderate' : (scond === 'Mild' ? 'color-mild' : 'color-normal')))}>{scond}</p></span>
-            <span><p>Depression</p><p className={dcond === 'Extremely Severe' ? 'color-extreme' : (dcond === 'Severe' ? 'color-severe' : (dcond === 'Moderate' ? 'color-moderate' : (dcond === 'Mild' ? 'color-mild' : 'color-normal')))}>{dcond}</p></span>
-            <span><p>Anxiety</p><p className={acond === 'Extremely Severe' ? 'color-extreme' : (acond === 'Severe' ? 'color-severe' : (acond === 'Moderate' ? 'color-moderate' : (acond === 'Mild' ? 'color-mild' : 'color-normal')))}>{acond}</p></span>
 
-          </div>
-        </div>
-        <div className="outerdivinhome1">
-{/* 
-          {dta && <div className='wel-come'>
-            <h1>Hello {dta.username}</h1><img src='https://cdn-icons-png.freepik.com/256/5821/5821932.png?ga=GA1.1.71213412.1697439743' height={70} width={70} style={{ marginLeft: '5px' }} />
-            {localStorage.setItem('user', JSON.stringify(dta.username))}
-
-          </div>
-
-          }
-          <div className='blinking'>
-            <p className='blink1'>Your Mental Health Matters!</p>
-          </div>
-
-          <div className="moving">
-            <p className='movingtext'>Strength in Mind, Resilience in Heart: Embrace Mental Wellness Today!</p>
-
-          </div>
-
-          <div className='hiconss'>
-            <div className="icon-containerh">
-              <span><img src="https://cdn-icons-png.flaticon.com/128/8389/8389778.png" alt="" />Brain</span>
-              <div className="hover-div">
-                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
-                <p>The brain's default mode network, responsible for mind-wandering and self-referential thoughts, is implicated in mental health conditions such as depression and anxiety.
-                </p>
-              </div>
-            </div>
-            <div className="icon-containerh" >
-              <span><img src="https://cdn-icons-png.flaticon.com/128/5230/5230693.png" alt="" />Anxiety</span>
-
-              <div className="hover-div">
-                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
-                <p>Anxiety disorders can be influenced by gut bacteria; research suggests that the gut microbiome may play a role in regulating neurotransmitters involved in anxiety, highlighting the gut-brain connection in mental health.</p>
-              </div>
-            </div>
-            <div className="icon-containerh" >
-              <span><img src="https://cdn-icons-png.flaticon.com/128/8775/8775187.png" alt="" />Depression</span>
-
-              <div className="hover-div">
-                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
-                <p>Depression can affect memory and cognitive function; research suggests that individuals with depression may experience difficulties with memory retrieval and attention, highlighting the impact of the condition beyond mood disturbances.</p>
-              </div>
-            </div>
-            <div className="icon-containerh">
-              <span><img src="https://cdn-icons-png.flaticon.com/128/3590/3590456.png" alt="" />Stress</span>
-
-              <div className="hover-div">
-                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
-                <p>Stress can impair decision-making abilities; studies indicate that chronic stress may affect regions of the brain involved in decision-making and impulse control, potentially leading to poor judgment and increased risk-taking behavior.</p>
-              </div>
-            </div>
-            <div className="icon-containerh">
-              <span><img src="https://cdn-icons-png.flaticon.com/128/7600/7600171.png" alt="" />Resilient</span>
-
-              <div className="hover-div">
-                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
-                <p>Resilience is not just a trait; it can be cultivated through various practices such as mindfulness, social support, and positive coping strategies, highlighting the potential for growth and adaptation in the face of adversity.</p>
-              </div>
-            </div>
-
-          </div> */}
+      <div className="hhm">
+        {/* <img className='imginlatest' src="https://tse1.mm.bing.net/th?id=OIP.lKJDxqTxOrxKEplRQlP5LgHaHa&pid=Api&P=0&h=180" alt="mind" /> */}
+        <div className='hdiv1'>
+          <p className='span1inlatest'>-----Latest results of your Mental Conditions-----</p>
+          <p>These are the latest results of your last taken test with date</p>
+          <p className='date'><b>Date: </b>{date}</p>
         </div>
 
+        <div className='hdiv2'>
+          <span><p className='hhmp1'>Stress</p><p id='srs' className={scond === 'Ext-Severe' ? 'color-extreme' : (scond === 'Severe' ? 'color-severe' : (scond === 'Moderate' ? 'color-moderate' : (scond === 'Mild' ? 'color-mild' : (scond==='Normal'?'color-normal':''))))}>{scond}</p></span>
+          <span className='unique'><p className='hhmp1'>Depression</p><p id='dps' className={dcond === 'Ext-Severe' ? 'color-extreme' : (dcond === 'Severe' ? 'color-severe' : (dcond === 'Moderate' ? 'color-moderate' : (dcond === 'Mild' ? 'color-mild' : (dcond==='Normal'?'color-normal':''))))}>{dcond}</p></span>
+          <span><p className='hhmp1'>Anxiety</p><p id='anx' className={acond === 'Ext-Severe' ? 'color-extreme' : (acond === 'Severe' ? 'color-severe' : (acond === 'Moderate' ? 'color-moderate' : (acond === 'Mild' ? 'color-mild' : (acond==='Normal'?'color-normal':''))))}>{acond}</p></span>
+
+        </div>
       </div>
+
 
       <div className="hhh1">
-
-
         <div className="tst">
           <p className='testp'>Assesment Test for Mental health Predictions</p>
           <div className='testdiv1'>

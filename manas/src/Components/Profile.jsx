@@ -5,7 +5,7 @@ import '../Css/home.css'
 import axios from 'axios';
 
 const Profile = () => {
-  const { tokens ,studentreports,setstudentreports} = useContext(ContextApi);
+  const { tokens ,studentreports} = useContext(ContextApi);
   const [data, setdata] = useState(null);
 
   useEffect(() => {
@@ -23,27 +23,27 @@ const Profile = () => {
      
     });
   }, [tokens.token]);
-  useEffect(() => {
-    const find = async () => {
-      try {
-        if(data){
-          console.log(data.email)
-        await axios.post('http://localhost:3000/findstudentreports', { studentemail: data.email })
-          .then((res) => {
-            setstudentreports(res.data)
-            console.log(res.data)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-        }
+  // useEffect(() => {
+  //   const find = async () => {
+  //     try {
+  //       if(data){
+  //         console.log(data.email)
+  //       await axios.post('http://localhost:3000/findstudentreports', { studentemail: data.email })
+  //         .then((res) => {
+  //           setstudentreports(res.data)
+  //           console.log(res.data)
+  //         })
+  //         .catch((err) => {
+  //           console.log(err)
+  //         })
+  //       }
 
-      } catch (error) {
-        console.error('Error sending student details:', error);
-      }
-    }
-    find()
-  },[data,tokens.token])
+  //     } catch (error) {
+  //       console.error('Error sending student details:', error);
+  //     }
+  //   }
+  //   find()
+  // },[data,tokens.token])
   if (!tokens.token) {
     return <Navigate to="/" />;
   }
