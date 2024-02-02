@@ -5,9 +5,8 @@ import '../Css/home.css'
 import axios from 'axios';
 
 const Profile = () => {
-  const { tokens } = useContext(ContextApi);
+  const { tokens ,studentreports,setstudentreports} = useContext(ContextApi);
   const [data, setdata] = useState(null);
-  const [studentreports, setstudentreports] = useState([])
 
   useEffect(() => {
     axios.get("http://localhost:3000/profile", {

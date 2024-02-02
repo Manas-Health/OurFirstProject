@@ -70,6 +70,22 @@ text-shadow:2px 2px whitesmoke;
 
 /*Home*/
 
+.latest div span{
+  font-size: 30px;
+  /* font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif; */
+  font-family: "Lumanosimo", cursive;
+}
+
+.span1inlatest{
+  font-size: 27px;
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  
+  
+}
 .hover-div p{
   font-family: "Lumanosimo", cursive;
   font-size: 12px;
