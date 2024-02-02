@@ -69,8 +69,19 @@ text-shadow:2px 2px whitesmoke;
 
 
 /*Home*/
+.manas p{
+  font-family: "Crimson Pro", serif;
+  font-size: 70.9px;
 
-.latest div span{
+}
+.manas span{
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Raleway', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  
+  
+}
+.hhmdiv div span{
   font-size: 30px;
   /* font-family: 'Montserrat', sans-serif;
   font-family: 'Raleway', sans-serif;

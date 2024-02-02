@@ -16,35 +16,18 @@ const Home = () => {
   const [dcond, setdcond] = useState('')
   const [acond, setacond] = useState('')
 
-  
+
   useEffect(() => {
     try {
       for (var i = studentreports.length - 1; i > studentreports.length - 4; i--) {
         if (studentreports[i].condition === 'Stress') {
-          if (studentreports[i].report === 'Extremely Severe') {
-            setscond("Ext-Severe")
-          }
-          else {
-            setscond(studentreports[i].report)
-          }
-         
+          setscond(studentreports[i].report)
         }
-       if (studentreports[i].condition === 'Depression') {
-          if (studentreports[i].report === 'Extremely Severe') {
-            setdcond("Ext-Severe")
-          }
-          else {
-            setdcond(studentreports[i].report)
- 
-          }
+        if (studentreports[i].condition === 'Depression') {
+          setdcond(studentreports[i].report)
         }
-        if(studentreports[i].condition === 'Anxiety') {
-          if (studentreports[i].report === 'Extremely Severe') {
-            setacond("Ext-Severe")
-          }
-          else {
-            setacond(studentreports[i].report)
-          }
+        if (studentreports[i].condition === 'Anxiety') {
+          setacond(studentreports[i].report)
         }
       }
     }
@@ -67,11 +50,12 @@ const Home = () => {
   }
   return (
     <div className='universalh'>
-
       <div className="hhh">
-
-        <div className="outerdivinhome1">
-
+        <div className="outerdivinhome0">
+           <div className="manas">
+            <p>Manas Health</p>
+            <span>A way to praceful and healthy mind</span>
+           </div>
           {dta && <div className='wel-come'>
             <h1>Hello {dta.username}</h1><img src='https://cdn-icons-png.freepik.com/256/5821/5821932.png?ga=GA1.1.71213412.1697439743' height={70} width={70} style={{ marginLeft: '5px' }} />
             {localStorage.setItem('user', JSON.stringify(dta.username))}
@@ -79,18 +63,13 @@ const Home = () => {
           </div>
 
           }
+          <div className='blinking'>
+            <p className='blink1'>Your Mental Health Matters!</p>
+          </div>
 
           <div className="moving">
             <p className='movingtext'>Strength in Mind, Resilience in Heart: Embrace Mental Wellness Today!</p>
 
-          </div>
-          <div className="latest">
-            <span className='span1inlatest'>Your latest results</span>
-            <div>
-            <span><p>Stress</p><p className={scond === 'Ext-Severe' ? 'color-extreme' : (scond === 'Severe' ? 'color-severe' : (scond === 'Moderate' ? 'color-moderate' : (scond === 'Mild' ? 'color-mild' : 'color-normal')))}>{scond}</p></span>
-    <span><p>Depression</p><p className={dcond === 'Ext-Severe' ? 'color-extreme' : (dcond === 'Severe' ? 'color-severe' : (dcond === 'Moderate' ? 'color-moderate' : (dcond === 'Mild' ? 'color-mild' : 'color-normal')))}>{dcond}</p></span>
-    <span><p>Anxiety</p><p className={acond === 'Ext-Severe' ? 'color-extreme' : (acond === 'Severe' ? 'color-severe' : (acond === 'Moderate' ? 'color-moderate' : (acond === 'Mild' ? 'color-mild' : 'color-normal')))}>{acond}</p></span>
-            </div>
           </div>
 
           <div className='hiconss'>
@@ -139,6 +118,81 @@ const Home = () => {
         </div>
 
       </div>
+      <div className="hhh-m">
+        <div className="hhmdiv">
+          <img className='imginlatest' src="https://tse1.mm.bing.net/th?id=OIP.lKJDxqTxOrxKEplRQlP5LgHaHa&pid=Api&P=0&h=180" alt="mind" />
+          <div>
+            <span className='span1inlatest'>-----Latest results-----</span>
+            <span><p>Stress</p><p className={scond === 'Extremely Severe' ? 'color-extreme' : (scond === 'Severe' ? 'color-severe' : (scond === 'Moderate' ? 'color-moderate' : (scond === 'Mild' ? 'color-mild' : 'color-normal')))}>{scond}</p></span>
+            <span><p>Depression</p><p className={dcond === 'Extremely Severe' ? 'color-extreme' : (dcond === 'Severe' ? 'color-severe' : (dcond === 'Moderate' ? 'color-moderate' : (dcond === 'Mild' ? 'color-mild' : 'color-normal')))}>{dcond}</p></span>
+            <span><p>Anxiety</p><p className={acond === 'Extremely Severe' ? 'color-extreme' : (acond === 'Severe' ? 'color-severe' : (acond === 'Moderate' ? 'color-moderate' : (acond === 'Mild' ? 'color-mild' : 'color-normal')))}>{acond}</p></span>
+
+          </div>
+        </div>
+        <div className="outerdivinhome1">
+{/* 
+          {dta && <div className='wel-come'>
+            <h1>Hello {dta.username}</h1><img src='https://cdn-icons-png.freepik.com/256/5821/5821932.png?ga=GA1.1.71213412.1697439743' height={70} width={70} style={{ marginLeft: '5px' }} />
+            {localStorage.setItem('user', JSON.stringify(dta.username))}
+
+          </div>
+
+          }
+          <div className='blinking'>
+            <p className='blink1'>Your Mental Health Matters!</p>
+          </div>
+
+          <div className="moving">
+            <p className='movingtext'>Strength in Mind, Resilience in Heart: Embrace Mental Wellness Today!</p>
+
+          </div>
+
+          <div className='hiconss'>
+            <div className="icon-containerh">
+              <span><img src="https://cdn-icons-png.flaticon.com/128/8389/8389778.png" alt="" />Brain</span>
+              <div className="hover-div">
+                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
+                <p>The brain's default mode network, responsible for mind-wandering and self-referential thoughts, is implicated in mental health conditions such as depression and anxiety.
+                </p>
+              </div>
+            </div>
+            <div className="icon-containerh" >
+              <span><img src="https://cdn-icons-png.flaticon.com/128/5230/5230693.png" alt="" />Anxiety</span>
+
+              <div className="hover-div">
+                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
+                <p>Anxiety disorders can be influenced by gut bacteria; research suggests that the gut microbiome may play a role in regulating neurotransmitters involved in anxiety, highlighting the gut-brain connection in mental health.</p>
+              </div>
+            </div>
+            <div className="icon-containerh" >
+              <span><img src="https://cdn-icons-png.flaticon.com/128/8775/8775187.png" alt="" />Depression</span>
+
+              <div className="hover-div">
+                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
+                <p>Depression can affect memory and cognitive function; research suggests that individuals with depression may experience difficulties with memory retrieval and attention, highlighting the impact of the condition beyond mood disturbances.</p>
+              </div>
+            </div>
+            <div className="icon-containerh">
+              <span><img src="https://cdn-icons-png.flaticon.com/128/3590/3590456.png" alt="" />Stress</span>
+
+              <div className="hover-div">
+                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
+                <p>Stress can impair decision-making abilities; studies indicate that chronic stress may affect regions of the brain involved in decision-making and impulse control, potentially leading to poor judgment and increased risk-taking behavior.</p>
+              </div>
+            </div>
+            <div className="icon-containerh">
+              <span><img src="https://cdn-icons-png.flaticon.com/128/7600/7600171.png" alt="" />Resilient</span>
+
+              <div className="hover-div">
+                <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
+                <p>Resilience is not just a trait; it can be cultivated through various practices such as mindfulness, social support, and positive coping strategies, highlighting the potential for growth and adaptation in the face of adversity.</p>
+              </div>
+            </div>
+
+          </div> */}
+        </div>
+
+      </div>
 
       <div className="hhh1">
 
@@ -176,12 +230,7 @@ const Home = () => {
           <img src="https://tse1.mm.bing.net/th?id=OIP.fufsq4cmcEGjdgb5sgmfPQHaHa&pid=Api&P=0&h=180" alt="" />
         </div>
       </div>
-      {/* <div className="something1">
-      <div className='indiv1in'>
-            <p className='blink1'>Your Mental Health Matters!</p>
-          </div>
 
-      </div> */}
       <div className="something">
 
         <Link to='/activities'>

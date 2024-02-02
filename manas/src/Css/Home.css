@@ -48,7 +48,6 @@
   padding: 7px;
   height: 59px;
   width: 59px;
-  border-style: solid;
   border-width: 1px;
   border-radius: 50%;
   transition: boxshadow;
@@ -63,8 +62,26 @@
   
 
 }
+
+.blinking{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-sizing: border-box;
+  /* border-radius: 750px / 50px; */
+}
+.outerdivinhome0{
+  height: 80%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  bottom:0
+}
 .outerdivinhome1 {
-  width: 55vw;
+  width: 59vw;
   height: 100%;
   position: relative;
   display: flex;
@@ -72,56 +89,22 @@
   flex-direction: column;
   justify-content: space-evenly;
   padding-top: 7px;
-  left: 43.5%;
 }
 .wel-come{
   width: 100%;
   height: 21vh;
   display: flex;
   justify-content: center;
-  align-items: last baseline;
+  align-items: center;
 }
 
-.latest{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  width: 100%;
-  height: 49vh;
+.manas{
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
 }
 
-.latest div{
-  display: flex;
-  width: 100%;
-  height: 70%;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-.latest div span{
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-}
-
-.indiv1in{
-
-  background-color: #9fb9ce;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-evenly;
-  box-sizing: border-box;
-  height: 23vh;
-  width: 50%;
-  /* border-radius: 750px / 50px; */
-  border-radius: 50%;
-}
 
 .testp{
   text-align: center;
@@ -272,11 +255,49 @@ display: flex;
   font-size: 20px;
 }
 .hhh{
-  background-image: url(C:\Users\karli\OneDrive\Desktop\ManasHealth-M\manas\src\images\33.jpg);
-  border-top-style: solid;
-  background-color: black;
-  background-size:100% 100%;
+  /* background-image: url(C:\Users\karli\OneDrive\Desktop\ManasHealth-M\manas\src\images\33.jpg); */
+  background-image: url(C:\Users\karli\OneDrive\Desktop\ManasHealth-M\manas\src\images\last.jpg);
+  border-style: solid;
+  background-size: 100% 100%;
+ width: 100%;
   height: 93vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.hhh-m{
+ border-style: solid;
+ height: 92vh;
+ width: 100%;
+}
+.hhmdiv{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-style: solid;
+  height: 100%;
+  width: 50%;
+}
+
+.hhmdiv div{
+  display: flex;
+  width: 100%;
+  height: 63%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.hhmdiv div span{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 90%;
+}
+
+.imginlatest{
+  border-radius: 50%;
 }
 .something{
   height: 27vh;
@@ -356,7 +377,7 @@ padding-bottom: 5px;
 overflow-x: hidden;
 }
 .movingtext{
- color: rgb(66, 63, 63);
+ color: rgb(11, 11, 11);
   animation: moving 17s linear infinite; 
   box-sizing: border-box;
   width: 33vw;
