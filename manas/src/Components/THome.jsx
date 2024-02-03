@@ -55,6 +55,7 @@ const THome = () => {
       <div className="t">
         <div className="studentdetails">
           <p style={{ fontSize: '25px', textAlign: 'center', fontWeight: 'bold' ,position:'sticky', top:0 ,backgroundColor:'black',color:'whitesmoke'}}>Student Details</p>
+          <div className='search'><label htmlFor="searchbtn"><input type="text" placeholder='Search' /><span id='searchbtn'>Search</span></label></div>
           <div className='headerp'><p id='nap'><strong>Name</strong></p><p id='emp'><strong>Email</strong></p><p id='mop'><strong>Mobile</strong></p></div>
           {studetails.map((student) => (
             <div className='studentdetailsdiv' key={student.id} >

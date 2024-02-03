@@ -12,7 +12,7 @@ import { FaInstagram } from "react-icons/fa6";
 
 const Home = () => {
 
-  const { tokens, dta, setdata, studentreports,setstudentreports } = useContext(ContextApi);
+  const { tokens, dta, setdata, studentreports, setstudentreports } = useContext(ContextApi);
   const [date, setdate] = useState('None')
   const [scond, setscond] = useState('None')
   const [dcond, setdcond] = useState('None')
@@ -20,16 +20,16 @@ const Home = () => {
   useEffect(() => {
     const find = async () => {
       try {
-        if(dta){
+        if (dta) {
           console.log(dta.email)
-        await axios.post('http://localhost:3000/findstudentreports', { studentemail: dta.email })
-          .then((res) => {
-            setstudentreports(res.data)
-            console.log(res.data)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
+          await axios.post('http://localhost:3000/findstudentreports', { studentemail: dta.email })
+            .then((res) => {
+              setstudentreports(res.data)
+              console.log(res.data)
+            })
+            .catch((err) => {
+              console.log(err)
+            })
         }
 
       } catch (error) {
@@ -37,7 +37,7 @@ const Home = () => {
       }
     }
     find()
-  },[dta,tokens.token])
+  }, [dta, tokens.token])
 
   useEffect(() => {
     try {
@@ -92,27 +92,24 @@ const Home = () => {
     const stressSeverity = calculateSeverityLevel(scond);
     const depressionSeverity = calculateSeverityLevel(dcond);
     const anxietySeverity = calculateSeverityLevel(acond);
-  
+
     const ctx = document.getElementById('myChart').getContext('2d');
-  
+
     const myChart = new Chart(ctx, {
       type: 'bar',
       data: {
         labels: ['Stress', 'Depression', 'Anxiety'],
         datasets: [{
           data: [stressSeverity, depressionSeverity, anxietySeverity],
-          backgroundColor: [
-            'blue',
-            'pink',
-            'purple'
-          ],             
+          label: 'Severity'
         }]
+
       },
       options: {
         indexAxis: 'x', // Display the graph vertically
         responsive: true,
         maintainAspectRatio: false,
-       
+
         scales: {
           x: {
             ticks: {
@@ -122,23 +119,23 @@ const Home = () => {
           y: {
             ticks: {
               color: 'black',
-              
-              callback: function(value, index, values) {
+
+              callback: function (value) {
                 return ['Normal', 'Mild', 'Moderate', 'Severe', 'Extremely Severe'][value - 1];
               }
             }
           }
         },
-        width:'300px'
+        width: '300px'
       }
     });
-    
-  
+
+
     return () => {
       myChart.destroy();
     };
   }, [scond, dcond, acond]);
-  
+
   // Function to calculate severity level based on the latest data
   const calculateSeverityLevel = (condition) => {
     switch (condition) {
@@ -154,8 +151,8 @@ const Home = () => {
         return 1;
     }
   };
-  
-  
+
+
   if (!tokens.token) {
     return <Navigate to="/" />;
   }
@@ -163,11 +160,11 @@ const Home = () => {
     <div className='universalh'>
       <div className="hhh">
         <div className="outerdivinhome0">
-          {dta && 
+          {dta &&
             <div className='hello'><h1>Hello!<span class="waving-hand">👋</span> {dta.username}</h1>
-            {localStorage.setItem('user', JSON.stringify(dta.username))}
+              {localStorage.setItem('user', JSON.stringify(dta.username))}
 
-          </div>
+            </div>
 
           }
           <div className='blinking'>
@@ -233,14 +230,14 @@ const Home = () => {
           <p className='span1inlatest2'>These are the latest results in the form of graph and text of your last taken test with date</p>
           <p className='date'><b>Date: </b>{date}</p>
         </div>
-         <div className="hdivgraph">
-         <canvas id="myChart" width="300" height="400"></canvas>
+        <div className="hdivgraph">
+          <canvas id="myChart" width="300" height="400"></canvas>
 
-         </div>
+        </div>
         <div className='hdiv2'>
-          <span><p className='hhmp1'>Stress</p><p id='srs' className={scond === 'Ext-Severe' ? 'color-extreme' : (scond === 'Severe' ? 'color-severe' : (scond === 'Moderate' ? 'color-moderate' : (scond === 'Mild' ? 'color-mild' : (scond==='Normal'?'color-normal':''))))}>{scond}</p></span>
-          <span className='unique'><p className='hhmp1'>Depression</p><p id='dps' className={dcond === 'Ext-Severe' ? 'color-extreme' : (dcond === 'Severe' ? 'color-severe' : (dcond === 'Moderate' ? 'color-moderate' : (dcond === 'Mild' ? 'color-mild' : (dcond==='Normal'?'color-normal':''))))}>{dcond}</p></span>
-          <span><p className='hhmp1'>Anxiety</p><p id='anx' className={acond === 'Ext-Severe' ? 'color-extreme' : (acond === 'Severe' ? 'color-severe' : (acond === 'Moderate' ? 'color-moderate' : (acond === 'Mild' ? 'color-mild' : (acond==='Normal'?'color-normal':''))))}>{acond}</p></span>
+          <span><p className='hhmp1'>Stress</p><p id='srs' className={scond === 'Ext-Severe' ? 'color-extreme' : (scond === 'Severe' ? 'color-severe' : (scond === 'Moderate' ? 'color-moderate' : (scond === 'Mild' ? 'color-mild' : (scond === 'Normal' ? 'color-normal' : ''))))}>{scond}</p></span>
+          <span className='unique'><p className='hhmp1'>Depression</p><p id='dps' className={dcond === 'Ext-Severe' ? 'color-extreme' : (dcond === 'Severe' ? 'color-severe' : (dcond === 'Moderate' ? 'color-moderate' : (dcond === 'Mild' ? 'color-mild' : (dcond === 'Normal' ? 'color-normal' : ''))))}>{dcond}</p></span>
+          <span><p className='hhmp1'>Anxiety</p><p id='anx' className={acond === 'Ext-Severe' ? 'color-extreme' : (acond === 'Severe' ? 'color-severe' : (acond === 'Moderate' ? 'color-moderate' : (acond === 'Mild' ? 'color-mild' : (acond === 'Normal' ? 'color-normal' : ''))))}>{acond}</p></span>
         </div>
       </div>
 
