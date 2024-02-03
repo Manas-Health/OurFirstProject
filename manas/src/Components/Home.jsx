@@ -4,6 +4,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import ContextApi from './ContextApi';
 import axios from 'axios';
 import '../Css/home.css'
+import Chart from 'chart.js/auto';
+
 import { Navigate, Link } from 'react-router-dom';
 
 import { FaInstagram } from "react-icons/fa6";
@@ -85,6 +87,75 @@ const Home = () => {
     ).catch((err) => console.log(err));
   }, [tokens.token]);
 
+  useEffect(() => {
+    // Calculate severity levels based on the latest data
+    const stressSeverity = calculateSeverityLevel(scond);
+    const depressionSeverity = calculateSeverityLevel(dcond);
+    const anxietySeverity = calculateSeverityLevel(acond);
+  
+    const ctx = document.getElementById('myChart').getContext('2d');
+  
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Stress', 'Depression', 'Anxiety'],
+        datasets: [{
+          data: [stressSeverity, depressionSeverity, anxietySeverity],
+          backgroundColor: [
+            'blue',
+            'pink',
+            'purple'
+          ],             
+        }]
+      },
+      options: {
+        indexAxis: 'x', // Display the graph vertically
+        responsive: true,
+        maintainAspectRatio: false,
+       
+        scales: {
+          x: {
+            ticks: {
+              color: 'black',
+            }
+          },
+          y: {
+            ticks: {
+              color: 'black',
+              
+              callback: function(value, index, values) {
+                return ['Normal', 'Mild', 'Moderate', 'Severe', 'Extremely Severe'][value - 1];
+              }
+            }
+          }
+        },
+        width:'300px'
+      }
+    });
+    
+  
+    return () => {
+      myChart.destroy();
+    };
+  }, [scond, dcond, acond]);
+  
+  // Function to calculate severity level based on the latest data
+  const calculateSeverityLevel = (condition) => {
+    switch (condition) {
+      case 'Ext-Severe':
+        return 5;
+      case 'Severe':
+        return 4;
+      case 'Moderate':
+        return 3;
+      case 'Mild':
+        return 2;
+      default:
+        return 1;
+    }
+  };
+  
+  
   if (!tokens.token) {
     return <Navigate to="/" />;
   }
@@ -92,12 +163,8 @@ const Home = () => {
     <div className='universalh'>
       <div className="hhh">
         <div className="outerdivinhome0">
-          <div className="manas">
-            <p>Manas Health</p>
-            <span>A way to peaceful and healthy mind</span>
-          </div>
-          {dta && <div className='wel-come'>
-            <h1>Hello {dta.username}</h1><img src='https://cdn-icons-png.freepik.com/256/5821/5821932.png?ga=GA1.1.71213412.1697439743' height={70} width={70} style={{ marginLeft: '5px' }} />
+          {dta && 
+            <div className='hello'><h1>Hello!<span class="waving-hand">👋</span> {dta.username}</h1>
             {localStorage.setItem('user', JSON.stringify(dta.username))}
 
           </div>
@@ -163,15 +230,17 @@ const Home = () => {
         {/* <img className='imginlatest' src="https://tse1.mm.bing.net/th?id=OIP.lKJDxqTxOrxKEplRQlP5LgHaHa&pid=Api&P=0&h=180" alt="mind" /> */}
         <div className='hdiv1'>
           <p className='span1inlatest'>-----Latest results of your Mental Conditions-----</p>
-          <p>These are the latest results of your last taken test with date</p>
+          <p className='span1inlatest2'>These are the latest results in the form of graph and text of your last taken test with date</p>
           <p className='date'><b>Date: </b>{date}</p>
         </div>
+         <div className="hdivgraph">
+         <canvas id="myChart" width="300" height="400"></canvas>
 
+         </div>
         <div className='hdiv2'>
           <span><p className='hhmp1'>Stress</p><p id='srs' className={scond === 'Ext-Severe' ? 'color-extreme' : (scond === 'Severe' ? 'color-severe' : (scond === 'Moderate' ? 'color-moderate' : (scond === 'Mild' ? 'color-mild' : (scond==='Normal'?'color-normal':''))))}>{scond}</p></span>
           <span className='unique'><p className='hhmp1'>Depression</p><p id='dps' className={dcond === 'Ext-Severe' ? 'color-extreme' : (dcond === 'Severe' ? 'color-severe' : (dcond === 'Moderate' ? 'color-moderate' : (dcond === 'Mild' ? 'color-mild' : (dcond==='Normal'?'color-normal':''))))}>{dcond}</p></span>
           <span><p className='hhmp1'>Anxiety</p><p id='anx' className={acond === 'Ext-Severe' ? 'color-extreme' : (acond === 'Severe' ? 'color-severe' : (acond === 'Moderate' ? 'color-moderate' : (acond === 'Mild' ? 'color-mild' : (acond==='Normal'?'color-normal':''))))}>{acond}</p></span>
-
         </div>
       </div>
 

@@ -36,38 +36,6 @@ font-family: 'Roboto', sans-serif;
     font-family: 'Roboto', sans-serif;
   }
 
-  
-  /* .yourmentalh1{
-    position: fixed;
-    left: 33%;
-    top: 40%;
-    font-family: 'Montserrat', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Rouge Script', cursive;
-font-size: 90px;
-text-shadow:2px 2px whitesmoke;
-  }
-  .yourmentalh1:hover{
-    margin: 2px;
-    text-shadow:2px 2px rgb(95, 19, 201);
-  }
-  .yourmentalh2{
-    position: fixed;
-    left: 44%;
-    top: 57%;
-    font-family: 'Montserrat', sans-serif;
-font-family: 'Raleway', sans-serif;
-font-family: 'Rouge Script', cursive;
-font-size: 90px;
-text-shadow:2px 2px whitesmoke;
-
-  }
-  .yourmentalh2:hover{
-    margin: 2px;
-    text-shadow:2px 2px rgb(95, 19, 201);
-  } */
-
-
 /*Home*/
 
 .date{
@@ -90,7 +58,9 @@ text-shadow:2px 2px whitesmoke;
 }
 .hhm .hdiv2 .hhmp1{
  font-size: 23.9px;
-  font-family: "Lumanosimo", cursive;
+ font-family: 'Montserrat', sans-serif;
+ font-family: 'Raleway', sans-serif;
+ font-family: 'Roboto', sans-serif;
 }
 
 .hhm .hdiv2 #srs{
@@ -107,12 +77,14 @@ text-shadow:2px 2px whitesmoke;
 }
 
 .span1inlatest{
-  font-size: 37px;
+  font-size: 39px;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Raleway', sans-serif;
   font-family: 'Roboto', sans-serif;
-  
-  
+}
+
+.span1inlatest2{
+  font-size: 23px;
 }
 .hover-div p{
   font-family: "Lumanosimo", cursive;
@@ -122,7 +94,6 @@ text-shadow:2px 2px whitesmoke;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Raleway', sans-serif;
   font-family: 'Roboto', sans-serif;
-  
 }
 .testp{
   font-family: 'Montserrat', sans-serif;
@@ -145,10 +116,9 @@ font-size: 25px;
   font-size: 50px;
   font-weight: bold;
 }
-.wel-come h1{
+.hello{
   font-family: "Crimson Pro", serif;
-  font-size: 59.9px;
-
+  font-size: 40.9px;
 }
 .wel-come p{
   font-family: 'Montserrat', sans-serif;
@@ -176,16 +146,6 @@ font-size: 25px;
   font-family: 'Roboto', sans-serif;
   font-size: 27px;
 }
-
-.indivhome1{
-  font-family: 'Montserrat', sans-serif;
-  font-family: 'Raleway', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  font-size: 22px;
-}
-
-
-
  /*Questions*/
  
 .qt p{

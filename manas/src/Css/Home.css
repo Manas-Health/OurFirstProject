@@ -2,11 +2,6 @@
   @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
   @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
-  .unique{
-    position: relative;
-    top: 22%;
-  }
   .color-mild {
     color: rgb(71, 197, 71);
   }
@@ -16,7 +11,7 @@
   }
   
   .color-severe {
-    color: red;
+    color: rgb(157, 4, 4);
   }
   
   .color-extreme {
@@ -48,7 +43,40 @@
 }
 
 /*Home css*/
-
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(16deg);
+  }
+  20% {
+    transform: rotate(-6deg);
+  }
+  30% {
+    transform: rotate(16deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(16deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.waving-hand {
+  animation: wave 2.1s 0.6s infinite;
+  transform-origin: 75% 75%;
+  display: inline-block;
+}
+.hello{
+  color:black;
+}
 .hiconss img{
   padding: 7px;
   height: 59px;
@@ -56,7 +84,7 @@
   border-width: 1px;
   border-radius: 50%;
   transition: boxshadow;
-  box-shadow: 2px 2px 2px 2px rgb(70, 69, 69);
+  box-shadow: 1px 1px 1px 1px  rgb(214, 207, 207);;
 }
 .hiconss{
   height: 79px;
@@ -73,8 +101,46 @@
   flex-direction: column;
   justify-content: space-evenly;
   box-sizing: border-box;
-  /* border-radius: 750px / 50px; */
 }
+
+.blink1{
+  text-shadow: 2px 2px 4px rgb(139, 137, 137);
+  animation: blink 1.3s infinite; 
+  
+}
+@keyframes blink {
+  0% { opacity: 1; } /* Start with fully visible text */
+  50% { opacity: 0; } /* Blinking animation: text disappears */
+  100% { opacity: 1; } /* Text becomes fully visible again */
+}
+
+.moving{
+ border-radius: 5px;
+  width: 100%;
+  padding-top: 5px;
+padding-bottom: 5px;
+overflow-x: hidden;
+}
+.movingtext{
+  text-shadow: 1px 1px 2px rgb(8, 8, 8);
+ color: rgb(214, 207, 207);
+  animation: moving 17s linear infinite; 
+  box-sizing: border-box;
+  width: 33vw;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  bottom: 5px;
+  text-align: center;
+  
+
+}
+
+@keyframes moving{
+  from { transform: translateX(100%); }
+        to { transform: translateX(-100%); }
+}
+
 .outerdivinhome0{
   height: 80%;
   display: flex;
@@ -94,13 +160,7 @@
   justify-content: space-evenly;
   padding-top: 7px;
 }
-.wel-come{
-  width: 100%;
-  height: 21vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .manas{
   display: flex;
@@ -169,15 +229,18 @@
   outline: none;
 }
 .tst{
-  background: rgb(56, 102, 136);
 
-  background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+  background: hsla(221, 59%, 75%, 1);
+
+background: linear-gradient(90deg, hsla(221, 59%, 75%, 1) 0%, hsla(216, 40%, 58%, 1) 100%);
+
+background: -moz-linear-gradient(90deg, hsla(221, 59%, 75%, 1) 0%, hsla(216, 40%, 58%, 1) 100%);
+
+background: -webkit-linear-gradient(90deg, hsla(221, 59%, 75%, 1) 0%, hsla(216, 40%, 58%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#9BB2E5", endColorstr="#698CBF", GradientType=1 );
   
-  background: -moz-linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
-  
-  background: -webkit-linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
-  
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#295270", endColorstr="#524175", GradientType=1 );
+ 
   box-sizing: border-box;
   height: 90%;
   width: 29%;
@@ -201,12 +264,6 @@
 .blink{
   animation: blink 1s infinite; /* Apply the blink animation infinitely */
   text-shadow: 2px 2px 2px green;
-}
-
-@keyframes blink {
-  0% { opacity: 1; } /* Start with fully visible text */
-  50% { opacity: 0; } /* Blinking animation: text disappears */
-  100% { opacity: 1; } /* Text becomes fully visible again */
 }
 
 .tst1 img{
@@ -280,52 +337,56 @@ display: flex;
   justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  height: 70vh;
+  height: 1000px;
 }
 .hhm .hdiv2{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: center;
   width: 80%;
-  height: 37vh;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius:50% ;
+  height: 27vh;
+}
+.hdivgraph{
+  width: 45%;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 3%;
+  padding-left: 3%;
+  background-color:whitesmoke;
+  opacity: 0.9;
 }
 .hhm .hdiv1{
-  width: 90%;
-  height: 20vh;
+    width: 90%;
+  height: 25vh;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
 }
 .hhm .hdiv2 span{
-  background: hsla(205, 46%, 30%, 1);
+  background: hsla(202, 71%, 27%, 1);
 
-background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+background: linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
 
-background: -moz-linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+background: -moz-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
 
-background: -webkit-linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+background: -webkit-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
 
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#295270", endColorstr="#524175", GradientType=1 );
-  /* background: hsla(330, 36%, 53%, 1);
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#145277", endColorstr="#83D0CB", GradientType=1 ); 
 
-background: linear-gradient(90deg, rgb(187, 112, 149) 0%, rgb(83, 28, 96) 100%);
-
-background: -moz-linear-gradient(90deg, rgb(187, 121, 154) 0%, rgb(104, 43, 118) 100%);
-
-background: -webkit-linear-gradient(90deg, rgb(177, 111, 144) 0%, rgb(113, 42, 129) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#B15B86", endColorstr="#440F50", GradientType=1 ); */
-  transition: boxshadow;
+    /* transition: boxshadow;
   box-shadow: 2px 2px 2px 2px rgb(45, 44, 44);
   border-radius: 50%;
   width:200px;
-  height: 200px;
+  height: 200px; */
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding: 2.7%;
+  border-radius: 25px;
 }
 
 .imginlatest{
@@ -370,13 +431,13 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#B15B86", en
   /* border-style: solid; */
   /* border-width: 0.1px; */
   cursor: pointer;
-  background: rgb(56, 102, 136);
+  background: rgb(79, 133, 174);
 
-  background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+  background: linear-gradient(90deg, rgb(68, 122, 160) 0%, hsla(260, 29%, 36%, 1) 100%);
   
-  background: -moz-linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+  background: -moz-linear-gradient(90deg, rgb(65, 116, 153) 0%, hsla(260, 29%, 36%, 1) 100%);
   
-  background: -webkit-linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+  background: -webkit-linear-gradient(90deg, rgb(68, 123, 161) 0%, hsla(260, 29%, 36%, 1) 100%);
   
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#295270", endColorstr="#524175", GradientType=1 );
 
@@ -400,42 +461,6 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#B15B86", en
   height: 79vh;
 }
 
-
-.blink1{
-  text-shadow: 2px 2px 4px rgb(100, 97, 97);
-  animation: blink 1.3s infinite; 
-}
-@keyframes blink {
-  0% { opacity: 1; } /* Start with fully visible text */
-  50% { opacity: 0; } /* Blinking animation: text disappears */
-  100% { opacity: 1; } /* Text becomes fully visible again */
-}
-
-.moving{
- border-radius: 5px;
-  width: 100%;
-  padding-top: 5px;
-padding-bottom: 5px;
-overflow-x: hidden;
-}
-.movingtext{
- color: rgb(11, 11, 11);
-  animation: moving 17s linear infinite; 
-  box-sizing: border-box;
-  width: 33vw;
-  overflow: hidden;
-  white-space: nowrap;
-  position: relative;
-  bottom: 5px;
-  text-align: center;
-}
-
-@keyframes moving{
-  from { transform: translateX(100%); }
-        to { transform: translateX(-100%); }
-}
-
-
  #img1 {
   position: relative;
 right:55px
@@ -444,11 +469,6 @@ right:55px
  #img2 {
   position: relative;
   right: 13px;
-}
-
- #img3 {
-  position: relative;
-  right: 79px;
 }
 
 .indivhome2 button:hover {
