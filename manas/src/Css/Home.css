@@ -11,16 +11,16 @@
   }
   
   .color-severe {
-    color: rgb(157, 4, 4);
+    color:rgb(244, 53, 53);
   }
   
   .color-extreme {
-    color: rgb(157, 4, 4);
+    color:rgb(244, 53, 53);
 
   }
   
   .color-normal {
-    color: rgb(71, 197, 71);
+    color: rgb(4, 248, 4);
   }
   
   .oops{
@@ -174,8 +174,6 @@ overflow-x: hidden;
 .testp{
   text-align: center;
   margin-top: 7px;
-
-  color: whitesmoke;
 }
 
 .testbtn{
@@ -209,8 +207,6 @@ overflow-x: hidden;
 
 
 .testdiv1 p{
-
- color: whitesmoke;
   line-height: 23px;
   width: 95%;
    margin: 3px;
@@ -220,7 +216,6 @@ overflow-x: hidden;
   border-radius:10px;
   border-style: dotted;
   border-width: 1px;
- border-color: black;
 }
 
 .testdiv1 img{
@@ -343,15 +338,22 @@ display: flex;
  
 }
 .hhm .hdiv2{
+  border-radius: 10px;
   display: flex;
-  justify-content: space-evenly;
-  align-items: end;
+  justify-content: space-around;
+  align-items: center;
   flex-direction: column;
-  width: 30%;
-  height: 95%;
-  border-left-style: dashed;
-  padding-right: 1%;
+  width: 25%;
+  height: 79%;
+  background: hsla(202, 71%, 27%, 1);
 
+  background: linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
+  
+  background: -moz-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
+  
+  background: -webkit-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
+  
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#145277", endColorstr="#83D0CB", GradientType=1 ); 
 }
 .hdivgraph{
   width: 45%;
@@ -381,22 +383,13 @@ display: flex;
   flex-direction: column;
 }
 .hhm .hdiv2 span{
-  background: hsla(202, 71%, 27%, 1);
-
-background: linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
-
-background: -moz-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
-
-background: -webkit-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
-
-filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#145277", endColorstr="#83D0CB", GradientType=1 ); 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
   padding: 3.7%;
-  width: 20vw;
-border-radius: 10px;
+  width: 21vw;
+  height:23% ;
 }
 
 .something{

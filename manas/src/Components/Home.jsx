@@ -1,22 +1,18 @@
-//npm install @fortawesome/fontawesome-free
 
 import React, { useContext, useEffect, useState } from 'react';
 import ContextApi from './ContextApi';
 import axios from 'axios';
-import '../Css/home.css'
 import Chart from 'chart.js/auto';
-
 import { Navigate, Link } from 'react-router-dom';
-
-import { FaInstagram } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
 
 const Home = () => {
-
-  const { tokens, dta, setdata, studentreports, setstudentreports } = useContext(ContextApi);
-  const [date, setdate] = useState('None')
-  const [scond, setscond] = useState('None')
-  const [dcond, setdcond] = useState('None')
-  const [acond, setacond] = useState('None')
+  const { tokens, dta, setdata } = useContext(ContextApi);
+  const [studentReports, setStudentReports] = useState([]);
+  const [latestDate, setLatestDate] = useState('None');
+  const [stressCondition, setStressCondition] = useState('None');
+  const [depressionCondition, setDepressionCondition] = useState('None');
+  const [anxietyCondition, setAnxietyCondition] = useState('None');
 
   useEffect(() => {
     axios.get("http://localhost:3000/home", {
@@ -29,55 +25,50 @@ const Home = () => {
   }, [tokens.token]);
 
   useEffect(() => {
-    const find = async () => {
+    const findStudentReports = async () => {
       try {
         if (dta) {
-          console.log(dta.email)
-          await axios.post('http://localhost:3000/findstudentreports', { studentemail: dta.email })
-            .then((res) => {
-              setstudentreports(res.data)
-              console.log(res.data)
-            })
-            .catch((err) => {
-              console.log(err)
-            })
+          const response = await axios.post('http://localhost:3000/findstudentreports', { studentemail: dta.email });
+          setStudentReports(response.data);
         }
-
       } catch (error) {
-        console.error('Error sending student details:', error);
+        console.error('Error fetching student reports:', error);
       }
-    }
-    find()
-  }, [dta, tokens.token])
+    };
+
+    findStudentReports();
+  }, [dta]);
 
   useEffect(() => {
-    try {
-      for (var i = studentreports.length - 1; i > studentreports.length - 4; i--) {
-        studentreports[i].condition === 'Stress' ? 
-            studentreports[i].report === 'Extremely Severe' ? setscond("Ext-Severe") : setscond(studentreports[i].report)
-        : studentreports[i].condition === 'Depression' ?
-            studentreports[i].report === 'Extremely Severe' ? setdcond("Ext-Severe") : setdcond(studentreports[i].report)
-        : studentreports[i].condition === 'Anxiety' ?
-            studentreports[i].report === 'Extremely Severe' ? setacond("Ext-Severe") : setacond(studentreports[i].report)
-        : null;
+    if (studentReports.length > 0) {
+      const latestReports = studentReports.slice(-3); // Get the latest 3 reports
+      const latestDate = latestReports[latestReports.length - 1].date;
+      setLatestDate(latestDate);
+
+      latestReports.forEach(report => {
+        switch (report.condition) {
+          case 'Stress':
+            setStressCondition(report.report);
+            break;
+          case 'Depression':
+            setDepressionCondition(report.report);
+            break;
+          case 'Anxiety':
+            setAnxietyCondition(report.report);
+            break;
+          default:
+            break;
+        }
+      });
     }
-    
-    for (var i = studentreports.length - 1; i > studentreports.length - 2; i--) {
-        setdate(studentreports[i].date);
-    }
-    
-    }
-    catch (err) {
-      console.log(err)
-    }
-  }, [tokens.token])
- 
+  }, [studentReports]);
+
   useEffect(() => {
-    if (studentreports.length > 0) {
-      const stressSeverity = calculateSeverityLevel(scond);
-      const depressionSeverity = calculateSeverityLevel(dcond);
-      const anxietySeverity = calculateSeverityLevel(acond);
-  
+    if (studentReports.length > 0) {
+      const stressSeverity = calculateSeverityLevel(stressCondition);
+      const depressionSeverity = calculateSeverityLevel(depressionCondition);
+      const anxietySeverity = calculateSeverityLevel(anxietyCondition);
+
       const ctx = document.getElementById('myChart');
   
       if (ctx) {
@@ -118,12 +109,11 @@ const Home = () => {
         };
       }
     }
-  }, [studentreports, scond, dcond, acond]);
-  
-  // Function to calculate severity level based on the latest data
+  }, [stressCondition, depressionCondition, anxietyCondition]);
+
   const calculateSeverityLevel = (condition) => {
     switch (condition) {
-      case 'Ext-Severe':
+      case 'Extremely Severe':
         return 5;
       case 'Severe':
         return 4;
@@ -136,12 +126,13 @@ const Home = () => {
     }
   };
 
-
   if (!tokens.token) {
     return <Navigate to="/" />;
   }
+
   return (
     <div className='universalh'>
+      {/* Your JSX content */}
       <div className="hhh">
         <div className="outerdivinhome0">
           {dta &&
@@ -212,7 +203,7 @@ const Home = () => {
         <div className='hdiv1'>
           <p className='span1inlatest'>-----Latest results of your Mental Conditions-----</p>
           <p className='span1inlatest2'>These are the latest results in the form of graph and text of your last taken test with date</p>
-          <p className='date'><b>Date: </b>{date}</p>
+          <p className='date'><b>Date: </b>{latestDate}</p>
         </div>
        <div className="gphanddiv2">
        <div className="hdivgraph">
@@ -220,9 +211,9 @@ const Home = () => {
 
         </div>
         <div className='hdiv2'>
-          <span><p className='hhmp1'>Stress</p><p id='srs' className={scond === 'Ext-Severe' ? 'color-extreme' : (scond === 'Severe' ? 'color-severe' : (scond === 'Moderate' ? 'color-moderate' : (scond === 'Mild' ? 'color-mild' : (scond === 'Normal' ? 'color-normal' : ''))))}>{scond}</p></span>
-          <span className='unique'><p className='hhmp1'>Depression</p><p id='dps' className={dcond === 'Ext-Severe' ? 'color-extreme' : (dcond === 'Severe' ? 'color-severe' : (dcond === 'Moderate' ? 'color-moderate' : (dcond === 'Mild' ? 'color-mild' : (dcond === 'Normal' ? 'color-normal' : ''))))}>{dcond}</p></span>
-          <span><p className='hhmp1'>Anxiety</p><p id='anx' className={acond === 'Ext-Severe' ? 'color-extreme' : (acond === 'Severe' ? 'color-severe' : (acond === 'Moderate' ? 'color-moderate' : (acond === 'Mild' ? 'color-mild' : (acond === 'Normal' ? 'color-normal' : ''))))}>{acond}</p></span>
+          <span><p className='hhmp1'>Stress</p><p id='srs' className={stressCondition === 'Extremely Severe' ? 'color-extreme' : (stressCondition === 'Severe' ? 'color-severe' : (stressCondition === 'Moderate' ? 'color-moderate' : (stressCondition === 'Mild' ? 'color-mild' : (stressCondition === 'Normal' ? 'color-normal' : ''))))}>{stressCondition}</p></span>
+          <span className='unique'><p className='hhmp1'>Depression</p><p id='dps' className={depressionCondition === 'Extremely Severe' ? 'color-extreme' : (depressionCondition=== 'Severe' ? 'color-severe' : (depressionCondition=== 'Moderate' ? 'color-moderate' : (depressionCondition=== 'Mild' ? 'color-mild' : (depressionCondition=== 'Normal' ? 'color-normal' : ''))))}>{depressionCondition}</p></span>
+          <span><p className='hhmp1'>Anxiety</p><p id='anx' className={anxietyCondition === 'Extremely Severe' ? 'color-extreme' : (anxietyCondition === 'Severe' ? 'color-severe' : (anxietyCondition === 'Moderate' ? 'color-moderate' : (anxietyCondition === 'Mild' ? 'color-mild' : (anxietyCondition === 'Normal' ? 'color-normal' : ''))))}>{anxietyCondition}</p></span>
         </div>
        </div>
       </div>
@@ -312,6 +303,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-

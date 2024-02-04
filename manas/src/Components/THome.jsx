@@ -89,33 +89,19 @@ import "../Css/Home.css";
 const THome = () => {
   const [studetails, setstudetails] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
-  const { tokens, setTokens, setstudentreports, setname } = useContext(ContextApi);
-  const navigate = useNavigate(); // Get the navigate function
+  const { tokens, setTokens} = useContext(ContextApi);
 
   useEffect(() => {
     const students = async () => {
       try {
         let studentdetails = await axios.get('http://localhost:3000/studentdetails');
-        setstudetails(studentdetails.data);
+        setstudetails(studentdetails.data);        
       } catch (error) {
         console.log(error);
       }
     };
     students();
   }, [tokens.token1]);
-
-  const handleDivClick = async (student) => {
-    try {
-      setname(student.username);
-      const res = await axios.post('http://localhost:3000/findstudentreports', { studentemail: student.email });
-      setstudentreports(res.data);
-      if (res.data) {
-        navigate('/reports'); // Use navigate function to navigate to '/reports'
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
 
   const filteredStudents = studetails.filter(student => student.username.toLowerCase().includes(searchQuery.toLowerCase()));
 
@@ -150,7 +136,7 @@ const THome = () => {
               <p id='nap2'>{student.username}</p>
               <p>{student.email}</p>
               <p>{student.mobile}</p>
-              <button onClick={() => handleDivClick(student)}>View Reports</button>
+              <Link to='/reports'><button>Veiw reports</button></Link>
             </div>
           ))}
         </div>

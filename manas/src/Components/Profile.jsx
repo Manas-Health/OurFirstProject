@@ -5,7 +5,8 @@ import '../Css/home.css'
 import axios from 'axios';
 
 const Profile = () => {
-  const { tokens ,studentreports} = useContext(ContextApi);
+  const { tokens } = useContext(ContextApi);
+  const [studentreports,setstudentreports]=useState([]);
   const [data, setdata] = useState(null);
 
   useEffect(() => {
@@ -23,6 +24,21 @@ const Profile = () => {
      
     });
   }, [tokens.token]);
+  
+  useEffect(() => {
+    const fetchStudentReports = async () => {
+  
+        try {
+          const response = await axios.post('http://localhost:3000/findstudentreports', { studentemail:data.email });
+          setstudentreports(response.data);
+        } catch (error) {
+          console.log(error);
+        }
+      
+    };
+
+    fetchStudentReports();
+  }, [data, tokens.token]);
   
   if (!tokens.token) {
     return <Navigate to="/" />;
