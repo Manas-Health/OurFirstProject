@@ -9,10 +9,10 @@ import { FaInstagram } from "react-icons/fa";
 const Home = () => {
   const { tokens, dta, setdata } = useContext(ContextApi);
   const [studentReports, setStudentReports] = useState([]);
-  const [latestDate, setLatestDate] = useState('None');
-  const [stressCondition, setStressCondition] = useState('None');
-  const [depressionCondition, setDepressionCondition] = useState('None');
-  const [anxietyCondition, setAnxietyCondition] = useState('None');
+  const [latestDate, setLatestDate] = useState('Null');
+  const [stressCondition, setStressCondition] = useState('Null');
+  const [depressionCondition, setDepressionCondition] = useState('Null');
+  const [anxietyCondition, setAnxietyCondition] = useState('Null');
 
   useEffect(() => {
     axios.get("http://localhost:3000/home", {
@@ -63,7 +63,7 @@ const Home = () => {
     }
   }, [studentReports]);
 
-  useEffect(() => {
+  useEffect(() =>{
     if (studentReports.length > 0) {
       const stressSeverity = calculateSeverityLevel(stressCondition);
       const depressionSeverity = calculateSeverityLevel(depressionCondition);
@@ -71,14 +71,14 @@ const Home = () => {
 
       const ctx = document.getElementById('myChart');
   
-      if (ctx) {
+      if (ctx){
         const myChart = new Chart(ctx, {
           type: 'bar',
           data: {
             labels: ['Stress', 'Depression', 'Anxiety'],
             datasets: [{
               data: [stressSeverity, depressionSeverity, anxietySeverity],
-              label: 'Severity'
+              label: 'Severity',
             }]
           },
           options: {
@@ -86,9 +86,12 @@ const Home = () => {
             responsive: true,
             maintainAspectRatio: false,
             scales: {
-              x: {
-                ticks: {
+              x:{
+                ticks:{
                   color: 'black',
+                  font: {
+                    size: 15,
+                  }
                 }
               },
               y: {
@@ -96,6 +99,9 @@ const Home = () => {
                   color: 'black',
                   callback: function (value) {
                     return ['Normal', 'Mild', 'Moderate', 'Severe', 'Extremely Severe'][value - 1];
+                  },
+                  font: {
+                    size: 15,
                   }
                 }
               }
@@ -121,8 +127,10 @@ const Home = () => {
         return 3;
       case 'Mild':
         return 2;
+        case 'Normal':
+          return 1;
       default:
-        return 1;
+        return 0;
     }
   };
 
@@ -201,8 +209,8 @@ const Home = () => {
       <div className="hhm">
         {/* <img className='imginlatest' src="https://tse1.mm.bing.net/th?id=OIP.lKJDxqTxOrxKEplRQlP5LgHaHa&pid=Api&P=0&h=180" alt="mind" /> */}
         <div className='hdiv1'>
-          <p className='span1inlatest'>-----Latest results of your Mental Conditions-----</p>
-          <p className='span1inlatest2'>These are the latest results in the form of graph and text of your last taken test with date</p>
+          <p className='span1inlatest'>Recently Taken Mental Health Test Results</p>
+          <p className='span1inlatest2'>These are the recent results in the form of graph and text of your last taken test with date</p>
           <p className='date'><b>Date: </b>{latestDate}</p>
         </div>
        <div className="gphanddiv2">
@@ -225,7 +233,7 @@ const Home = () => {
           <div className='testdiv1'>
             <img src="https://tse2.mm.bing.net/th?id=OIP.2lXQSIR8CgHyq7WBs16Q5wHaEK&pid=Api&P=0&h=180" alt="*" />
             <p>
-              Here in this website You can take test for your mental health conditions like Anxiety, Depression and Stress. So we provide 7 questions for each Mental condition , You can take any type of mental condition test separately. And get report of your mental condition instantly.
+              Here, You can take test for your mental health conditions like Anxiety, Depression and Stress. So we provide 7 questions for each Mental condition , You can take any type of mental condition test separately. And get report of your mental condition instantly.
               And here you can access any test only once in a week
             </p>
           </div>
