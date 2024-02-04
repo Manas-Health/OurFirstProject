@@ -65,39 +65,23 @@ import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Reports = () => {
-  const { tokens } = useContext(ContextApi);
+  const { tokens, selectedStudent} = useContext(ContextApi);
 
-  const [studetails, setstudetails] = useState([]);
   const [studentreports, setstudentreports] = useState([]);
 
   useEffect(() => {
-    const fetchStudentDetails = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/studentdetails');
-        setstudetails(response.data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-
-    fetchStudentDetails();
-  }, [tokens.token1]);
-
-  useEffect(() => {
-    console.log(studetails)
     const fetchStudentReports = async () => {
-      if (studetails.length > 0) {
         try {
-          const response = await axios.post('http://localhost:3000/findstudentreports', { studentemail: studetails[0].email });
+          const response = await axios.post('http://localhost:3000/findstudentreports', { studentemail: selectedStudent.email });
           setstudentreports(response.data);
+          console.log(studentreports)
         } catch (error) {
           console.log(error);
         }
-      }
     };
 
     fetchStudentReports();
-  }, [studetails, tokens.token1]);
+  }, [ tokens.token1]);
 
   if (!tokens.token1) {
     return <Navigate to="/" />;
@@ -118,7 +102,7 @@ const Reports = () => {
             <p><strong>Date</strong></p>
           </div>
 
-          {studentreports.map((studentreport) => (
+          {storedReports.map((studentreport) => (
             <div className='studentdetailsdiv' key={studentreport.id}>
               <p>{studentreport.condition}</p>
               <p>{studentreport.report}</p>

@@ -10,6 +10,8 @@ const ContextState = (props) => {
   const [tokens, setTokens] = useState(storedTokens);
   const [result, setresult] = useState(storedResult); // Updated state name
   const [dta, setdata] = useState(null);
+  const [selectedStudent, setSelectedStudent] = useState(null);
+
   useEffect(() => {
     localStorage.setItem('tokens', JSON.stringify(tokens));
   }, [tokens]);
@@ -25,6 +27,7 @@ const ContextState = (props) => {
     setTokens,
     result, // Updated state name
     setresult, // Updated state updater
+    selectedStudent, setSelectedStudent
   };
 
   return (

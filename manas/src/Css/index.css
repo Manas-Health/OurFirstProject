@@ -39,6 +39,10 @@ font-family: 'Roboto', sans-serif;
 /*Home*/
 
 .date{
+  background-color:rgb(245, 243, 243);
+  padding-left: 1%;
+  padding-right: 1%;
+  border-radius: 20px;
   font-size: 22px;
   font-family: 'Montserrat', sans-serif;
   font-family: 'Raleway', sans-serif;
@@ -85,6 +89,7 @@ font-family: 'Roboto', sans-serif;
 
 .span1inlatest2{
   font-size: 23px;
+  text-shadow: 0.3px 0.3px 0.3px rgb(12, 12, 12);
 }
 .hover-div p{
   font-family: "Lumanosimo", cursive;

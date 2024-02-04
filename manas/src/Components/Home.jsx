@@ -210,7 +210,7 @@ const Home = () => {
         {/* <img className='imginlatest' src="https://tse1.mm.bing.net/th?id=OIP.lKJDxqTxOrxKEplRQlP5LgHaHa&pid=Api&P=0&h=180" alt="mind" /> */}
         <div className='hdiv1'>
           <p className='span1inlatest'>Recently Taken Mental Health Test Results</p>
-          <p className='span1inlatest2'>These are the recent results in the form of graph and text of your last taken test with date</p>
+          <p className='span1inlatest2'>These are the results in the form of graph and text of your last taken test, with date</p>
           <p className='date'><b>Date: </b>{latestDate}</p>
         </div>
        <div className="gphanddiv2">
