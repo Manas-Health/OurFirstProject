@@ -17,6 +17,17 @@ const Home = () => {
   const [scond, setscond] = useState('None')
   const [dcond, setdcond] = useState('None')
   const [acond, setacond] = useState('None')
+
+  useEffect(() => {
+    axios.get("http://localhost:3000/home", {
+      headers: {
+        'x-token': tokens.token
+      }
+    }).then(
+      res => setdata(res.data)
+    ).catch((err) => console.log(err));
+  }, [tokens.token]);
+
   useEffect(() => {
     const find = async () => {
       try {
@@ -42,100 +53,73 @@ const Home = () => {
   useEffect(() => {
     try {
       for (var i = studentreports.length - 1; i > studentreports.length - 4; i--) {
-        if (studentreports[i].condition === 'Stress') {
-          if (studentreports[i].report === 'Extremely Severe') {
-            setscond("Ext-Severe")
-          }
-          else {
-            setscond(studentreports[i].report)
-          }
-
-        }
-        if (studentreports[i].condition === 'Depression') {
-          if (studentreports[i].report === 'Extremely Severe') {
-            setdcond("Ext-Severe")
-          }
-          else {
-            setdcond(studentreports[i].report)
-
-          }
-        }
-        if (studentreports[i].condition === 'Anxiety') {
-          if (studentreports[i].report === 'Extremely Severe') {
-            setacond("Ext-Severe")
-          }
-          else {
-            setacond(studentreports[i].report)
-          }
-        }
-      }
-      for (var i = studentreports.length - 1; i > studentreports.length - 2; i--) {
-        setdate(studentreports[i].date)
-      }
+        studentreports[i].condition === 'Stress' ? 
+            studentreports[i].report === 'Extremely Severe' ? setscond("Ext-Severe") : setscond(studentreports[i].report)
+        : studentreports[i].condition === 'Depression' ?
+            studentreports[i].report === 'Extremely Severe' ? setdcond("Ext-Severe") : setdcond(studentreports[i].report)
+        : studentreports[i].condition === 'Anxiety' ?
+            studentreports[i].report === 'Extremely Severe' ? setacond("Ext-Severe") : setacond(studentreports[i].report)
+        : null;
+    }
+    
+    for (var i = studentreports.length - 1; i > studentreports.length - 2; i--) {
+        setdate(studentreports[i].date);
+    }
+    
     }
     catch (err) {
       console.log(err)
     }
   }, [tokens.token])
+ 
   useEffect(() => {
-    axios.get("http://localhost:3000/home", {
-      headers: {
-        'x-token': tokens.token
-      }
-    }).then(
-      res => setdata(res.data)
-    ).catch((err) => console.log(err));
-  }, [tokens.token]);
-
-  useEffect(() => {
-    // Calculate severity levels based on the latest data
-    const stressSeverity = calculateSeverityLevel(scond);
-    const depressionSeverity = calculateSeverityLevel(dcond);
-    const anxietySeverity = calculateSeverityLevel(acond);
-
-    const ctx = document.getElementById('myChart').getContext('2d');
-
-    const myChart = new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Stress', 'Depression', 'Anxiety'],
-        datasets: [{
-          data: [stressSeverity, depressionSeverity, anxietySeverity],
-          label: 'Severity'
-        }]
-
-      },
-      options: {
-        indexAxis: 'x', // Display the graph vertically
-        responsive: true,
-        maintainAspectRatio: false,
-
-        scales: {
-          x: {
-            ticks: {
-              color: 'black',
-            }
+    if (studentreports.length > 0) {
+      const stressSeverity = calculateSeverityLevel(scond);
+      const depressionSeverity = calculateSeverityLevel(dcond);
+      const anxietySeverity = calculateSeverityLevel(acond);
+  
+      const ctx = document.getElementById('myChart');
+  
+      if (ctx) {
+        const myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Stress', 'Depression', 'Anxiety'],
+            datasets: [{
+              data: [stressSeverity, depressionSeverity, anxietySeverity],
+              label: 'Severity'
+            }]
           },
-          y: {
-            ticks: {
-              color: 'black',
-
-              callback: function (value) {
-                return ['Normal', 'Mild', 'Moderate', 'Severe', 'Extremely Severe'][value - 1];
+          options: {
+            indexAxis: 'x', // Display the graph vertically
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              x: {
+                ticks: {
+                  color: 'black',
+                }
+              },
+              y: {
+                ticks: {
+                  color: 'black',
+                  callback: function (value) {
+                    return ['Normal', 'Mild', 'Moderate', 'Severe', 'Extremely Severe'][value - 1];
+                  }
+                }
               }
-            }
+            },
+            width: '300px'
           }
-        },
-        width: '300px'
+        });
+  
+        return () => {
+          myChart.destroy(); // Cleanup function to destroy the chart instance
+        };
       }
-    });
-
-
-    return () => {
-      myChart.destroy();
-    };
-  }, [scond, dcond, acond]);
-
+    }
+  }, [studentreports, scond, dcond, acond]);
+  
   // Function to calculate severity level based on the latest data
   const calculateSeverityLevel = (condition) => {
     switch (condition) {
@@ -230,7 +214,8 @@ const Home = () => {
           <p className='span1inlatest2'>These are the latest results in the form of graph and text of your last taken test with date</p>
           <p className='date'><b>Date: </b>{date}</p>
         </div>
-        <div className="hdivgraph">
+       <div className="gphanddiv2">
+       <div className="hdivgraph">
           <canvas id="myChart" width="300" height="400"></canvas>
 
         </div>
@@ -239,6 +224,7 @@ const Home = () => {
           <span className='unique'><p className='hhmp1'>Depression</p><p id='dps' className={dcond === 'Ext-Severe' ? 'color-extreme' : (dcond === 'Severe' ? 'color-severe' : (dcond === 'Moderate' ? 'color-moderate' : (dcond === 'Mild' ? 'color-mild' : (dcond === 'Normal' ? 'color-normal' : ''))))}>{dcond}</p></span>
           <span><p className='hhmp1'>Anxiety</p><p id='anx' className={acond === 'Ext-Severe' ? 'color-extreme' : (acond === 'Severe' ? 'color-severe' : (acond === 'Moderate' ? 'color-moderate' : (acond === 'Mild' ? 'color-mild' : (acond === 'Normal' ? 'color-normal' : ''))))}>{acond}</p></span>
         </div>
+       </div>
       </div>
 
 

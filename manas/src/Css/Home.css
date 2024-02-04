@@ -339,15 +339,19 @@ display: flex;
   justify-content:space-evenly;
   align-items: center;
   flex-direction: column;
-  height: 1000px;
+  height: 751px;
  
 }
 .hhm .hdiv2{
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  width: 80%;
-  height: 23vh;
+  align-items: end;
+  flex-direction: column;
+  width: 30%;
+  height: 95%;
+  border-left-style: dashed;
+  padding-right: 1%;
+
 }
 .hdivgraph{
   width: 45%;
@@ -359,7 +363,14 @@ display: flex;
   padding-left: 3%;
   background-color:whitesmoke;
   opacity: 0.9;
-  height: 50vh;
+  height: 59vh;
+}
+.gphanddiv2{
+    width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 90vh;
 }
 .hhm .hdiv1{
     width: 90%;
@@ -379,24 +390,15 @@ background: -moz-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%
 background: -webkit-linear-gradient(90deg, hsla(202, 71%, 27%, 1) 0%, hsla(176, 45%, 66%, 1) 100%);
 
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#145277", endColorstr="#83D0CB", GradientType=1 ); 
-
-   
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
-  padding: 2.7%;
-  border-radius: 25px;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  padding: 3.7%;
+  width: 20vw;
+border-radius: 10px;
 }
 
-.imginlatest{
-  border-radius: 50%;
-  height: 200px;
-  width: 200px;
-}
 .something{
   height: 27vh;
   display: flex;
@@ -1207,7 +1209,6 @@ width: 79px;
 
 /*Teacher home*/
 .search{
-  border-style: solid;
   margin-top: 2%;
   display: flex;
   justify-content: center;
