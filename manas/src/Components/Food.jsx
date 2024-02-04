@@ -13,7 +13,7 @@ const Food = () => {
       <h1 style={{textAlign:"center"}}>Food For Your Proper Mental-Health</h1>
       <p style={{textAlign:'center',color:'green',marginTop:'5px'}}><b>Note:</b>On moving cursor onto the images you can know little information about them.</p>
 
-       <div style={{display:"grid",gridTemplateColumns:'1fr 1fr 1fr 1fr',marginTop:'30px',rowGap:'17px'}}>
+       <div style={{display:"grid",gridTemplateColumns:'1fr 1fr 1fr 1fr',marginTop:'30px',rowGap:'17px',paddingLeft:'29px' }}>
         
             <div className="div"title="Broccoli may slow mental decline and support healthy brain and nervous tissue function.">
                 <img className="imagee"src="https://tse4.mm.bing.net/th?id=OIP.os6rT89mcI-ImBoB9sns2gHaEm&pid=Api&P=0&h=180"/>

@@ -13,7 +13,7 @@ const Exercises = () => {
         <div className='hob'>
             <h1 style={{ textAlign: "center" }}>Exercise For Your Better Mental-Health</h1>
             <p style={{ textAlign: 'center', color: 'green', marginTop: '5px'}}><b>Note:</b>On moving cursor onto the images you can know little information about them.</p>
-            <div style={{ display: "grid", gridTemplateColumns: '1fr 1fr 1fr 1fr', marginTop: '30px',rowGap:'17px' }}>
+            <div style={{ display: "grid", gridTemplateColumns: '1fr 1fr 1fr 1fr', marginTop: '30px',rowGap:'17px',paddingLeft:'29px' }}>
 
                 <div className="div" title="Walking increases mental alertness and positive mood.">
                     <img className="imagee" src="https://tse4.mm.bing.net/th?id=OIP.PtsUlc98DRjia15Z6BfGsgHaEJ&pid=Api&P=0&h=180" />
