@@ -367,14 +367,18 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7C65A9", en
   width: 45%;
   border-radius: 7px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  padding-right: 3%;
-  padding-left: 3%;
+  flex-direction: column;
   /* background-color:rgb(245, 243, 243); */
   background-color: rgb(227, 240, 252);
   opacity: 0.9;
   height: 59vh;
+  padding: 3%;
+}
+.hdivgraph p{
+  position: relative;
+  bottom: 7%;
 }
 .gphanddiv2{
     width: 100%;
