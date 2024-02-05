@@ -161,7 +161,7 @@ const THome = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [studetails, setstudetails] = useState([]);
 
-  const { tokens, setTokens, setSelectedStudent } = useContext(ContextApi);
+  const { tokens, setTokens} = useContext(ContextApi);
   const navigate = useNavigate()
   useEffect(() => {
     const fetchStudents = async () => {
@@ -180,10 +180,8 @@ const THome = () => {
   );
 
   const handleViewReports = (student) => {
-    setSelectedStudent(student);
-     console.log(setSelectedStudent)
-     navigate('/reports')
-    
+    localStorage.setItem('selected', JSON.stringify({a: student.email, b: student.username})); // Store updated student details
+    navigate('/reports');
   };
 
   if (!tokens.token1) {

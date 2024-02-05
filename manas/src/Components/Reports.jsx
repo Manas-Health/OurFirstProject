@@ -65,14 +65,14 @@ import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Reports = () => {
-  const { tokens, selectedStudent} = useContext(ContextApi);
-
+  const { tokens} = useContext(ContextApi);
+   const storedstudent= JSON.parse(localStorage.getItem('selected')) || [];
   const [studentreports, setstudentreports] = useState([]);
 
   useEffect(() => {
     const fetchStudentReports = async () => {
         try {
-          const response = await axios.post('http://localhost:3000/findstudentreports', { studentemail: selectedStudent.email });
+          const response = await axios.post('http://localhost:3000/findstudentreports', { studentemail: storedstudent.a });
           setstudentreports(response.data);
           console.log(studentreports)
         } catch (error) {
@@ -91,9 +91,12 @@ const Reports = () => {
     <div>
       <div className="reviewfortea">
         <div className="studentreports">
-          <p style={{ fontSize: '25px', textAlign: 'center', fontWeight: 'bold', position: 'sticky', top: 0, backgroundColor: 'black', color: 'whitesmoke' }}>
+          <p style={{paddingLeft:'5%', fontSize: '25px', textAlign: 'center', fontWeight: 'bold', position: 'sticky', top: 0, backgroundColor: 'black', color: 'whitesmoke' }}>
+          {
+            storedstudent.b
+          }
             <Link to="/teacherhome">
-              <button className='tback'>Back</button>
+              <button onClick={()=>{localStorage.removeItem('selected')}} className='tback'>Back</button>
             </Link>
           </p>
           <div className='mrd'>
@@ -102,7 +105,7 @@ const Reports = () => {
             <p><strong>Date</strong></p>
           </div>
 
-          {storedReports.map((studentreport) => (
+          {studentreports.map((studentreport) => (
             <div className='studentdetailsdiv' key={studentreport.id}>
               <p>{studentreport.condition}</p>
               <p>{studentreport.report}</p>
