@@ -1,4 +1,3 @@
-
 import React, { useContext, useEffect, useState } from 'react';
 import ContextApi from './ContextApi';
 import axios from 'axios';
@@ -73,21 +72,12 @@ const Home = () => {
   
       if (ctx){
         const myChart = new Chart(ctx, {
-          type: 'line', // Change type to line
+          type: 'bar',
           data: {
             labels: ['Stress', 'Depression', 'Anxiety'],
             datasets: [{
               data: [stressSeverity, depressionSeverity, anxietySeverity],
               label: 'Severity',
-              borderColor: 'rgba(75, 192, 192, 1)', // Set line color
-              fill: false, // Do not fill area under line
-              tension: 0.4 ,
-              pointStyle: 'circle', // Set point style to rectangle
-              pointRadius: 6, // Set point radius to increase size
-              pointBorderColor: 'rgba(75, 192, 192, 1)', // Set point border color
-              pointBackgroundColor: 'rgba(75, 192, 192, 1)', // Set point fill color
-              pointBorderWidth: 2, // Set point border width
-              pointHoverRadius: 8, // Set point hover radius
             }]
           },
           options: {
@@ -100,8 +90,7 @@ const Home = () => {
                   color: 'black',
                   font: {
                     size: 15,
-                  },
-                  
+                  }
                 }
               },
               y: {
@@ -112,8 +101,7 @@ const Home = () => {
                   },
                   font: {
                     size: 15,
-                  },
-                
+                  }
                 }
               }
             },
