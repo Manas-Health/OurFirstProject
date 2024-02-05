@@ -100,7 +100,8 @@ const Home = () => {
                   color: 'black',
                   font: {
                     size: 15,
-                  }
+                  },
+                  
                 }
               },
               y: {
@@ -111,7 +112,8 @@ const Home = () => {
                   },
                   font: {
                     size: 15,
-                  }
+                  },
+                
                 }
               }
             },
