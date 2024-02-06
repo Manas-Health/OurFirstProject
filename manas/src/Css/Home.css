@@ -342,7 +342,7 @@ display: flex;
   align-items: center;
   flex-direction: column;
   width: 25%;
-  height: 75%;
+  height: 89%;
 
   background: hsla(260, 28%, 53%, 1);
 
@@ -373,7 +373,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7C65A9", en
   /* background-color:rgb(245, 243, 243); */
   background-color: rgb(227, 240, 252);
   opacity: 0.9;
-  height: 59vh;
+  height: 63vh;
   padding: 2%;
 }
 .hdivgraph p{
@@ -384,14 +384,14 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7C65A9", en
     width: 100%;
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
-  height: 79vh;
+  padding-top: 2%;
+  height: 75vh;
 }
 .hhm .hdiv1{
     width: 90%;
-  height: 23vh;
+  height: 20vh;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   flex-direction: column;
 }
@@ -402,7 +402,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#7C65A9", en
   flex-direction: column;
   padding: 3.7%;
   width: 21vw;
-  height:23% ;
+  height:24.5%;
 }
 
 .something{

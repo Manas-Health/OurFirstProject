@@ -31,6 +31,7 @@ const Profile = () => {
         try {
           const response = await axios.post('http://localhost:3000/findstudentreports', { studentemail:data.email });
           setstudentreports(response.data);
+          console.log(response.data)
         } catch (error) {
           console.log(error);
         }

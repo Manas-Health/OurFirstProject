@@ -8,10 +8,9 @@ import { FaInstagram } from "react-icons/fa";
 const Home = () => {
   const { tokens, dta, setdata } = useContext(ContextApi);
   const [studentReports, setStudentReports] = useState([]);
-  const [latestDate, setLatestDate] = useState('Null');
-  const [stressCondition, setStressCondition] = useState('Null');
-  const [depressionCondition, setDepressionCondition] = useState('Null');
-  const [anxietyCondition, setAnxietyCondition] = useState('Null');
+  const [stressAverage, setStressAverage] = useState(0);
+  const [depressionAverage, setDepressionAverage] = useState(0);
+  const [anxietyAverage, setAnxietyAverage] = useState(0);
 
   useEffect(() => {
     axios.get("http://localhost:3000/home", {
@@ -39,99 +38,124 @@ const Home = () => {
   }, [dta]);
 
   useEffect(() => {
-    if (studentReports.length > 0) {
-      const latestReports = studentReports.slice(-3); // Get the latest 3 reports
-      const latestDate = latestReports[latestReports.length - 1].date;
-      setLatestDate(latestDate);
+    const calculateAverageSeverity = (condition) => {
+      const filteredReports = studentReports.filter(report => report.condition === condition);
+      if (filteredReports.length === 0) {
+        return 0; // Return 0 if there are no reports for the condition
+      } else if (filteredReports.length === 1) {
+        return calculateSeverityLevel(filteredReports[0].report); // Return the severity of the single report
+      } else {
+        // Calculate the average severity
+        const totalSeverity = filteredReports.reduce((accumulator, currentReport) => {
+          return accumulator + calculateSeverityLevel(currentReport.report);
+        }, 0);
+        return totalSeverity / filteredReports.length;
+      }
+    };
 
-      latestReports.forEach(report => {
-        switch (report.condition) {
-          case 'Stress':
-            setStressCondition(report.report);
-            break;
-          case 'Depression':
-            setDepressionCondition(report.report);
-            break;
-          case 'Anxiety':
-            setAnxietyCondition(report.report);
-            break;
-          default:
-            break;
-        }
-      });
-    }
+    setStressAverage(calculateAverageSeverity('Stress'));
+    setDepressionAverage(calculateAverageSeverity('Depression'));
+    setAnxietyAverage(calculateAverageSeverity('Anxiety'));
   }, [studentReports]);
 
-  useEffect(() =>{
-    if (studentReports.length > 0) {
-      const stressSeverity = calculateSeverityLevel(stressCondition);
-      const depressionSeverity = calculateSeverityLevel(depressionCondition);
-      const anxietySeverity = calculateSeverityLevel(anxietyCondition);
+  useEffect(() => {
+    const ctx = document.getElementById('myChart');
 
-      const ctx = document.getElementById('myChart');
-  
-      if (ctx){
-        const myChart = new Chart(ctx, {
-          type: 'bar',
-          data: {
-            labels: ['Stress', 'Depression', 'Anxiety'],
-            datasets: [{
-              data: [stressSeverity, depressionSeverity, anxietySeverity],
-              label: 'Severity',
-            }]
-          },
-          options: {
-            indexAxis: 'x', // Display the graph vertically
-            responsive: true,
-            maintainAspectRatio: false,
-            scales: {
-              x:{
-                ticks:{
-                  color: 'black',
-                  font: {
-                    size: 15,
-                  }
-                }
-              },
-              y: {
-                ticks: {
-                  color: 'black',
-                  callback: function (value) {
-                    return ['Normal', 'Mild', 'Moderate', 'Severe', 'Extremely Severe'][value - 1];
-                  },
-                  font: {
-                    size: 15,
-                  }
+    if (ctx) {
+      const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Stress', 'Depression', 'Anxiety'],
+          datasets: [{
+            data: [stressAverage, depressionAverage, anxietyAverage],
+            label: 'Average Severity in %',
+          }]
+        },
+        options: {
+          indexAxis: 'x',
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            x: {
+              ticks: {
+                color: 'black',
+                font: {
+                  size: 15,
                 }
               }
             },
-            width: '300px'
-          }
-        });
-  
-        return () => {
-          myChart.destroy(); // Cleanup function to destroy the chart instance
-        };
-      }
+            y: {
+              ticks: {
+                color: 'black',
+                stepSize:20,
+                callback: function (value) {
+                  return value; // Modified callback function to display y-axis ticks as numbers
+                },
+                font: {
+                  size: 15,
+                }
+              }
+            }
+          },
+          width: '300px'
+        }
+      });
+
+      return () => {
+        myChart.destroy(); // Cleanup function to destroy the chart instance
+      };
     }
-  }, [stressCondition, depressionCondition, anxietyCondition]);
+  }, [stressAverage, depressionAverage, anxietyAverage]);
 
   const calculateSeverityLevel = (condition) => {
     switch (condition) {
       case 'Extremely Severe':
-        return 5;
+        return 100;
       case 'Severe':
-        return 4;
+        return 80;
       case 'Moderate':
-        return 3;
+        return 60;
       case 'Mild':
-        return 2;
-        case 'Normal':
-          return 1;
+        return 40;
+      case 'Normal':
+        return 20;
       default:
         return 0;
     }
   };
+
+  const convertSeverityToText = (severity) => {
+    if (severity >= 0 && severity <= 20) {
+      return 'Normal';
+    } else if (severity > 20 && severity <= 40) {
+      return 'Mild';
+    } else if (severity > 40 && severity <= 60) {
+      return 'Moderate';
+    } else if (severity > 60 && severity <= 80) {
+      return 'Severe';
+    } else if (severity > 80 && severity <= 100) {
+      return 'Extremely Severe';
+    } else {
+      return '-';
+    }
+  };
+
+  const getSeverityColor = (severityLevel) => {
+    switch (severityLevel) {
+      case 'Normal':
+        return 'color-normal';
+      case 'Mild':
+        return 'color-mild';
+      case 'Moderate':
+        return 'color-moderate';
+      case 'Severe':
+      case 'Extremely Severe':
+        return 'color-severe';
+      default:
+        return '';
+    }
+  };
+
 
   if (!tokens.token) {
     return <Navigate to="/" />;
@@ -208,21 +232,36 @@ const Home = () => {
       <div className="hhm">
         {/* <img className='imginlatest' src="https://tse1.mm.bing.net/th?id=OIP.lKJDxqTxOrxKEplRQlP5LgHaHa&pid=Api&P=0&h=180" alt="mind" /> */}
         <div className='hdiv1'>
-          <p className='span1inlatest'>Recently Taken Mental Health Test Results</p>
-          <p className='span1inlatest2'>These are the results in the form of graph and text of your last taken test, with date</p>
-          <p className='date'><b>Date: </b>{latestDate}</p>
-        </div>
-       <div className="gphanddiv2">
-       <div className="hdivgraph">
-          <canvas id="myChart" width="300" height="400"></canvas>
+          <p className='span1inlatest'>Average results of your mental conditions</p>
+          <p className='span1inlatest2'>These are the average results in the form of graph and text of all tests</p>
 
         </div>
-        <div className='hdiv2'>
-          <span><p className='hhmp1'>Stress</p><p id='srs' className={stressCondition === 'Extremely Severe' ? 'color-extreme' : (stressCondition === 'Severe' ? 'color-severe' : (stressCondition === 'Moderate' ? 'color-moderate' : (stressCondition === 'Mild' ? 'color-mild' : (stressCondition === 'Normal' ? 'color-normal' : ''))))}>{stressCondition}</p></span>
-          <span className='unique'><p className='hhmp1'>Depression</p><p id='dps' className={depressionCondition === 'Extremely Severe' ? 'color-extreme' : (depressionCondition=== 'Severe' ? 'color-severe' : (depressionCondition=== 'Moderate' ? 'color-moderate' : (depressionCondition=== 'Mild' ? 'color-mild' : (depressionCondition=== 'Normal' ? 'color-normal' : ''))))}>{depressionCondition}</p></span>
-          <span><p className='hhmp1'>Anxiety</p><p id='anx' className={anxietyCondition === 'Extremely Severe' ? 'color-extreme' : (anxietyCondition === 'Severe' ? 'color-severe' : (anxietyCondition === 'Moderate' ? 'color-moderate' : (anxietyCondition === 'Mild' ? 'color-mild' : (anxietyCondition === 'Normal' ? 'color-normal' : ''))))}>{anxietyCondition}</p></span>
+        <div className="gphanddiv2">
+          <div className="hdivgraph">
+            <canvas id="myChart" width="300" height="400"></canvas>
+
+          </div>
+          <div className='hdiv2'>
+            <span>
+              <p className='hhmp1'>Stress</p>
+              <p id='srs' className={getSeverityColor(convertSeverityToText(stressAverage))}>
+                {convertSeverityToText(stressAverage)}
+              </p>
+            </span>
+            <span className='unique'>
+              <p className='hhmp1'>Depression</p>
+              <p id='dps' className={getSeverityColor(convertSeverityToText(depressionAverage))}>
+                {convertSeverityToText(depressionAverage)}
+              </p>
+            </span>
+            <span>
+              <p className='hhmp1'>Anxiety</p>
+              <p id='anx' className={getSeverityColor(convertSeverityToText(anxietyAverage))}>
+                {convertSeverityToText(anxietyAverage)}
+              </p>
+            </span>
+          </div>
         </div>
-       </div>
       </div>
 
 
