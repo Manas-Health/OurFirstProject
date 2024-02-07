@@ -125,7 +125,10 @@ const Home = () => {
   };
 
   const convertSeverityToText = (severity) => {
-    if (severity >= 0 && severity <= 20) {
+    if(severity===0){
+      return '-'
+    }
+    else if (severity > 0 && severity <= 20) {
       return 'Normal';
     } else if (severity > 20 && severity <= 40) {
       return 'Mild';
@@ -135,8 +138,6 @@ const Home = () => {
       return 'Severe';
     } else if (severity > 80 && severity <= 100) {
       return 'Extremely Severe';
-    } else {
-      return '-';
     }
   };
 
