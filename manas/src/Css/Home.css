@@ -509,12 +509,13 @@ right:55px
 .studeta{
   width: 60vw;
   height:82vh;
-  background-color: #97bae7;
   border-radius: 5px;
   overflow-y: scroll;
+  background-color: #92b0fc;
+
 }
 .universalp{
-  background-color: #718fbd;
+  background-color: #9fc1fd;
   height: 92.2vh;
   overflow: hidden;
 }
@@ -546,8 +547,7 @@ right:55px
 .profilecontainer {
   width: 25vw;
   height: 82vh;
-  /* background: transparent; */
-  background-color: #97bae7;
+  background-color: #92b0fc;
 
   border-radius: 5px;
   display: flex;
