@@ -487,7 +487,8 @@ right:55px
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: #619eed;
+  background-color: #6995fa;
+
   margin: 2%;
   border-radius: 3px;
   padding: 5px;
@@ -511,11 +512,12 @@ right:55px
   height:82vh;
   border-radius: 5px;
   overflow-y: scroll;
-  background-color: #92b0fc;
+  background-color: rgb(156, 184, 252);
 
 }
 .universalp{
-  background-color: #9fc1fd;
+  background-color: #8ca6e3;
+
   height: 92.2vh;
   overflow: hidden;
 }
@@ -547,8 +549,7 @@ right:55px
 .profilecontainer {
   width: 25vw;
   height: 82vh;
-  background-color: #92b0fc;
-
+  background-color: rgb(156, 184, 252);
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -588,8 +589,8 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#9BAFD9", en
 
 .universalth {
   height: 100vh;
-  background-color: #718fbd;
-;}
+  background-color: #a8bff5;
+}
 
 .universal h2 {
   position: relative;
@@ -617,8 +618,7 @@ filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#9BAFD9", en
 
 
 .ques {
-  height:100%;
-  background-color: #718fbd;
+  background-color: #a8bff5;
   height: 92.2vh;
 }
 
@@ -970,7 +970,7 @@ hr {
 .about-us {
   height: 92.2vh;
   overflow:hidden;
-  background-color: #718fbd;
+  background-color: #B7C9F2;
 
 }
 .abo{
@@ -1139,8 +1139,7 @@ width: 79px;
 }
 .reportuniversal {
   height: 92.2vh;
-  background-color: #718fbd;
-
+  background-color: #a8bff5;
 }
 
 .show-h1 {
@@ -1161,11 +1160,11 @@ width: 79px;
   transition: boxshadow;
   box-shadow: 1px 1px 1px 1px grey;
   position: relative;
-  top: 5%;
+  top: 2%;
   left: 21%;
   text-align: center;
   width: 57%;
-  height: 77%;
+  height: 79%;
   background-color:white;
 }
 
@@ -1359,7 +1358,7 @@ align-items: center;
 }
 
 .reviewfortea{
-  background-color: #718fbd;
+  background-color: #a8bff5;
 
  margin: 0;
  padding: 0;
@@ -1555,17 +1554,17 @@ align-items: center;
 .def{
   border: none;
   padding: 7px;
-  border-radius: 7px;
+  border-radius: 2%;
   position: absolute;
-  left: 221px;
+  left: 159px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    height: 85vh; 
-   width: 70vw;
+   width: 79vw;
    padding-left: 3%; 
    margin-top: 9px;
-   background-color:rgb(152, 157, 195);
+   background-color: #aac0f8;
 }
 
 .hinac{
@@ -1584,7 +1583,7 @@ dd{
 }
 .hob{
   scroll-behavior: auto;
-  background-color: #BFCFE7;
+  background-color: #B7C9F2;
   margin: 0;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -1596,7 +1595,7 @@ dd{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: #BFCFE7;
+  background-color: #B7C9F2;
   height: 92.2vh;
 }
 

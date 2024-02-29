@@ -11,7 +11,7 @@ const Home = () => {
   const [stressAverage, setStressAverage] = useState(0);
   const [depressionAverage, setDepressionAverage] = useState(0);
   const [anxietyAverage, setAnxietyAverage] = useState(0);
-
+  
   useEffect(() => {
     axios.get("http://localhost:3000/home", {
       headers: {
@@ -234,7 +234,7 @@ const Home = () => {
         {/* <img className='imginlatest' src="https://tse1.mm.bing.net/th?id=OIP.lKJDxqTxOrxKEplRQlP5LgHaHa&pid=Api&P=0&h=180" alt="mind" /> */}
         <div className='hdiv1'>
           <p className='span1inlatest'>Average results of your mental conditions</p>
-          <p className='span1inlatest2'>These are the average results in the form of graph and text of all tests</p>
+          <p className='span1inlatest2'>These are the average results in the form of graph and text of all the tests taken so far!</p>
 
         </div>
         <div className="gphanddiv2">

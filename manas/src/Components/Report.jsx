@@ -20,7 +20,7 @@ const Report = () => {
     result.length>0 ? (
       <div className='reportuniversal'>
       <button onClick={()=>{setback(true),localStorage.removeItem('result')}} className="closereport">Back</button>
-      <h1 style={{textAlign:'center',position:'relative',top:'2%',fontSize:'50px',fontFamily:'cursive'}}>Report</h1>
+      <h1 style={{textAlign:'center',position:'relative',top:'1%',fontSize:'50px',fontFamily:'cursive'}}>Report</h1>
       <div className="report">
         <div className='Show0'>
           <h1 className='show-h1'> Your {latestResult.a} Level Is {latestResult.b.result}

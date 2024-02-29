@@ -216,12 +216,12 @@ const Questions = () => {
     const millisecondsInOneWeek = 7 * millisecondsInOneDay; // 7 days in milliseconds
 
     const difference = Math.abs(date1 - date2);
-    if(difference===millisecondsInOneWeek){
+    if(difference>=millisecondsInOneWeek){
       localStorage.removeItem(`lastStressTestDate${user}`)
       localStorage.removeItem(`lastDepressionTestDate${user}`)
       localStorage.removeItem(`lastAnxietyTestDate${user}`)
     }
-    return difference !== millisecondsInOneWeek;
+    return difference >= millisecondsInOneWeek;
 };
 
   // console.log(questions)
