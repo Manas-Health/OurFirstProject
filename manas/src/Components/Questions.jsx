@@ -221,7 +221,7 @@ const Questions = () => {
       localStorage.removeItem(`lastDepressionTestDate${user}`)
       localStorage.removeItem(`lastAnxietyTestDate${user}`)
     }
-    return difference >= millisecondsInOneWeek;
+    return difference <= millisecondsInOneWeek;
 };
 
   // console.log(questions)
