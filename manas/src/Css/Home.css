@@ -898,9 +898,15 @@ hr {
   align-items: center;
 }
 
-.books img{
-  height: 75%;
-  width: 17.9%;
+.books a{
+  height: 350px;
+  width: 310px;
+  margin: 7px;
+}
+
+.books a img{
+  height: 300px;
+  width: 270px;
 }
 
 .books h1{

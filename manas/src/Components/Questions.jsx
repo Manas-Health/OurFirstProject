@@ -214,16 +214,17 @@ const Questions = () => {
   const isExactlyOneWeekApart = (date1, date2) => {
     const millisecondsInOneDay = 24 * 60 * 60 * 1000; // 1 day in milliseconds
     const millisecondsInOneWeek = 7 * millisecondsInOneDay; // 7 days in milliseconds
-
+  
     const difference = Math.abs(date1 - date2);
-    if(difference>=millisecondsInOneWeek){
-      localStorage.removeItem(`lastStressTestDate${user}`)
-      localStorage.removeItem(`lastDepressionTestDate${user}`)
-      localStorage.removeItem(`lastAnxietyTestDate${user}`)
+    if (difference > millisecondsInOneWeek) {
+      // If the difference is greater than one week, remove items from local storage
+      localStorage.removeItem(`lastStressTestDate${user}`);
+      localStorage.removeItem(`lastDepressionTestDate${user}`);
+      localStorage.removeItem(`lastAnxietyTestDate${user}`);
     }
     return difference <= millisecondsInOneWeek;
-};
-
+  };
+  
   // console.log(questions)
 
   //open any div

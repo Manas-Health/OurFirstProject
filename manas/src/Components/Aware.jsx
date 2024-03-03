@@ -1,6 +1,6 @@
 
 import ContextApi from './ContextApi';
-import React,{useContext} from 'react'
+import React, { useContext } from 'react'
 import { Navigate } from 'react-router-dom';
 import '../Css/home.css'
 const Aware = () => {
@@ -72,11 +72,6 @@ const Aware = () => {
           The symptoms of stress serve as signals, urging individuals to pay attention to their mental well-being. Ignoring these signals can exacerbate the impact of stress on overall health. Recognizing the importance of stress management is crucial. Seeking support from friends and family, engaging in regular exercise, adopting mindfulness practices, and ensuring adequate sleep are effective strategies. Professional assistance, such as counseling or therapy, can provide valuable coping mechanisms.
 
           Moreover, lifestyle adjustments, including time management, setting realistic goals, and practicing self-compassion, contribute significantly to stress reduction. Identifying specific stressors and developing coping mechanisms tailored to individual needs enhances resilience. Cultivating a supportive social network and fostering open communication also play pivotal roles in maintaining mental well-being. In essence, understanding and managing stress is a holistic endeavor that encompasses emotional, physical, and behavioral dimensions, promoting a balanced and healthier life.
-
-
-
-
-
         </p>
 
       </div>
@@ -84,12 +79,16 @@ const Aware = () => {
       <div className='books'>
         <h1>Here are top Recommended Books for Mental Health</h1>
         <div>
-          <img src="https://tse1.mm.bing.net/th?id=OIP.ZfgNyuqUIgmREz6IiF7wYAHaLL&pid=Api&P=0&h=180" alt="" />
-          <img src="https://tse2.mm.bing.net/th?id=OIP.x2b_Vx0HEuvSWjJCPNplTwAAAA&pid=Api&P=0&h=180" alt="" />
-          <img src="https://tse1.mm.bing.net/th?id=OIP.NTuhfyLAJmXr-wBXiaPYqwHaJ4&pid=Api&P=0&h=180" alt="" />
-          <img src="https://d3525k1ryd2155.cloudfront.net/h/915/353/972353915.0.x.jpg" alt="" />
-          <img src="https://tse3.mm.bing.net/th?id=OIP.9cZJhN48yh7CPJtiA7Br0wHaLp&pid=Api&P=0&h=180" alt="" />
-
+          <a href="https://www.amazon.com/Body-Keeps-Score-Healing-Trauma/dp/0143127748">          <img src="https://tse1.mm.bing.net/th?id=OIP.ZfgNyuqUIgmREz6IiF7wYAHaLL&pid=Api&P=0&h=180" alt="" />
+          </a>
+          <a href="https://www.amazon.in/Feeling-GooD-New-Mood-Therapy/dp/0380810336">          <img src="https://tse2.mm.bing.net/th?id=OIP.x2b_Vx0HEuvSWjJCPNplTwAAAA&pid=Api&P=0&h=180" alt="" />
+          </a>
+          <a href="https://www.amazon.in/Noonday-Demon-Atlas-Depression/dp/1501123882/ref=sr_1_1?crid=KLTCNG9CYGM9&dib=eyJ2IjoiMSJ9.hcOVZWoH3srk1ia-gxAhjGYsuE7bWf9hQ-GP-sXm7yBiIwWYorQepN9dkxPSN3R68l9rnaBjCd0_5m6QQpz613-hy3_NzGN22LLS7nbBGyxVwQaywmigrJvnrZDg7-cYAkcIgqPDMqkTf51ZZzlqPfSt9quvm4kl7AsIZiHiKIh-rQkfCQKcGppSXUZaI_vtLT7J1OSrAlaBIKvm05W9Yd970VyhiuU8ztdf4O39qco.8UEQcYRYFsYTJHv45Dn4VAwJKwglJuaOvWfEyoSNf-s&dib_tag=se&keywords=an+atlas+of+depression&qid=1709477156&s=books&sprefix=an+atlas+of+depressio%2Cstripbooks%2C311&sr=1-1">          <img src="https://tse1.mm.bing.net/th?id=OIP.NTuhfyLAJmXr-wBXiaPYqwHaJ4&pid=Api&P=0&h=180" alt="" />
+          </a>
+          <a href="https://www.amazon.in/Unquiet-Mind-Madness-Picador-Classic/dp/1447275284/ref=sr_1_1?dib=eyJ2IjoiMSJ9.aQm2eLxEXfk6epDVXQvCGRy8G4KSShpyIwf-myU4gj50-BcECbCQ_ol3zn0YY8dj4XO-zvmKv2nJYAiOS3x1MjiZz-a0jVTgeI_lQCq_Rd6pHr237B32hl-lUfrD2ULZ7v5xicCMoF2J5NewyG--y_mp6IooTRtndTIzAs4jULakQsDPMBGttnIJMZYNaQ96TncVpEp6Oj5Fp0nDgUdqe9yHp9_ys89Sxx8crof0yMA.AM-2YcmrGCvDL0MjLQ810ZriJq2kVeBHQKV6GsSYdfU&dib_tag=se&keywords=an+unquiet+mind&qid=1709477197&s=books&sr=1-1">          <img src="https://tse2.mm.bing.net/th?id=OIP.bBMlpuJ3KVCkquZSGGHZagHaLO&pid=Api&P=0&h=180" alt="" />
+          </a>
+          <a href="https://www.amazon.in/Happiness-Trap-2nd-Struggling-Living-ebook/dp/B098TK7QYM/ref=sr_1_2?crid=3RSKSAT5YSX8O&dib=eyJ2IjoiMSJ9._yR0B2MrnWGdrZOTp3B7RKZ86N4mT0MzwR0g-5jm67_2qPpboUXg5t2ULpH2W4E_D-jx8olQlmR6W7aiGLgtjLZ8Ike0TdLC7rY-gT39GCghMgC7Xe36Bt5-cgyvASrSkfYBAAu-spcejcpEPrUcCqjZIBfTv2S80ClqaXfYr2yHdlwVqV5SxF5eAx9mqeXkHnxf4BfEPd-sHgSLY5_VJjEmQdtf5vn43QJ10L7OO7M.H76Blm55Pb5Y0cryvoU6S_4FqwmA66ff8RS5GM7zlA8&dib_tag=se&keywords=the+happiness+trap&qid=1709477020&s=books&sprefix=the+happiness+trap%2Cstripbooks%2C579&sr=1-2">          <img src="https://tse3.mm.bing.net/th?id=OIP.9cZJhN48yh7CPJtiA7Br0wHaLp&pid=Api&P=0&h=180" alt="" />
+          </a>
         </div>
       </div>
       <div className="disease">
