@@ -217,7 +217,7 @@ const Home = () => {
               </div>
             </div>
             <div className="icon-containerh">
-              <span><img src="https://cdn-icons-png.flaticon.com/128/7600/7600171.png" alt="" />Resilient</span>
+              <span><img src="https://cdn-icons-png.flaticon.com/128/7600/7600171.png" alt="" />Resilience </span>
 
               <div className="hover-div">
                 <h3 style={{ textAlign: 'center' }}>Do you know?</h3>
