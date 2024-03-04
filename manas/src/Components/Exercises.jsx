@@ -43,9 +43,9 @@ const Exercises = () => {
                     <img className="imagee" src="https://img.freepik.com/premium-photo/woman-doing-yoga-beach-with-mountain-background_865967-25537.jpg" />
                     <p><b>Yoga</b></p>
                 </div>
-                <div title="" className="div">
+                <div title="Indoor Cycling is best for reducing the stress and anxiety1 " className="div">
                     <img className="imagee" src="https://img.freepik.com/free-photo/people-doing-indoor-cycling_23-2149270249.jpg?size=626&ext=jpg&ga=GA1.1.1546980028.1702771200&semt=ais" />
-                    <p><b>h</b></p>
+                    <p><b>Indoor Cycling</b></p>
                 </div>
                 <div title=" pilates may assist in the treatment of depression and anxiety by offering an oppurtunity to socalise,changing the chemicals in the brain providing distarction from negative thoughts." className="div">
                     <img className="imagee" src="https://media.istockphoto.com/id/1189386452/photo/adult-woman-practising-yoga-at-home.jpg?s=612x612&w=0&k=20&c=jNKlF5SMhfWHLzIyp2nfKHeCpAqaEpJE3p2dySvKLv8=" />
